@@ -1,5 +1,25 @@
 {
   "name": "Vapos",
   "private": true,
-  "dependencies": {}
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch --mode=development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-react": "^7.13.13",
+    "babel-loader": "^8.2.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "webpack": "^5.37.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.7.0"
+  }
 }
