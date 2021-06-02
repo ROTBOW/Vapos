@@ -7,5 +7,7 @@ import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', () => {
     let root = document.getElementById('root');
-    ReactDOM.render(<Root store={configureStore()}/>, root)
+    let store = configureStore()
+    window.store = store
+    ReactDOM.render(<Root store={store}/>, root)
 })

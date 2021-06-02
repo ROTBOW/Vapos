@@ -1,5 +1,6 @@
 import LoginForm from './login_form';
 import { connect } from 'react-redux';
+import { sendLogin } from '../../actions/session_actions';
 
 const mapStateToProps = state => {
     return {
@@ -9,7 +10,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        sendLogin: user => dispatch(sendLogin(user))
     }
 }
 

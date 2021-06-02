@@ -1,8 +1,8 @@
 class Api::SessionsController < ApplicationController
 
     def create
-        user = User.find_by_credentials(params[:user][:username], params[:user][:password])
-        if login(user)
+        @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
+        if login(@user)
             @messages = ['Log in successful']
             render :create
         else
