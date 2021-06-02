@@ -11,13 +11,10 @@ class LoginForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    componentDidUpdate(){
-        console.log(store.getState()['sessionUser'])
-    }
-
     handleSubmit(e) {
         e.preventDefault();
         this.props.sendLogin(this.state)
+        
     }
 
     update(key){
