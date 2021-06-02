@@ -11,7 +11,7 @@ class NavBar extends React.Component {
                 {/* <li> 
                     <button onClick={() => this.props.history.replace('/login')}>Login</button>
                      <button onClick={() => this.props.history.replace('/user/new')}>Sign Up</button>
-                </li> */}
+                    </li> */}
                 <li>
                     <Link to='/login'>Login</Link>
                 </li>
