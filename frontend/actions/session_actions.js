@@ -20,7 +20,10 @@ const receiveLogout = () => {
 
 export const sendLogin = user => dispatch => {
     return sessionApiUtil.login(user)
-        .then(user => dispatch(receiveLogin(user)))
+        .then(user => {
+            debugger
+            return dispatch(receiveLogin(user))
+        })
 }
 
 export const sendLogout = () => dispatch => {

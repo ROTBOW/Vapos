@@ -16,6 +16,7 @@ class NavBar extends React.Component {
                 <div>
                     <Link to='/login'><button>Login</button></Link>
                     <Link to='/user/new'><button>Sign Up</button></Link>
+                    <button onClick={this.props.sendLogout} >Log Out</button>
                 </div>
 
             </div>

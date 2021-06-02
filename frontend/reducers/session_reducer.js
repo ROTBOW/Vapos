@@ -4,10 +4,12 @@ let initState = null
 
 const SessionReducer = (state = initState, action) => {
     Object.freeze(state);
+
     
     switch(action.type){
 
-        case RECEIVE_LOGIN: // need to change the show for session login, rn it just sends back messages
+        case RECEIVE_LOGIN:
+            debugger
             return action.user;
 
         case RECEIVE_LOGOUT:

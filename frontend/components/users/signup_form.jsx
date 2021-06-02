@@ -23,9 +23,8 @@ class SignUpForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // this.createUser(this.state)
-        // below is temp
-        alert(`${this.state.username} has tried to make an account! but I don't work lol`)
+        this.props.createUser(this.state);
+        this.props.sendLogin(this.state);
     }
 
 

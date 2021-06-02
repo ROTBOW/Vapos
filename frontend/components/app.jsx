@@ -1,8 +1,9 @@
 import React from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
-import NavBar from './navbar/navbar';
+
 import LoginFormContaniner from './session/login_form_container'
 import SignUpFormContainer from './users/signup_form_container';
+import NavbarContainer from './navbar/navbar_container';
 
 
 import vaposLogo from '../../app/assets/images/ui/logo_vapos.png';
@@ -18,7 +19,7 @@ class App extends React.Component {
 
                     
 
-                        <Route path='/' component={NavBar}/>
+                        <Route path='/' component={NavbarContainer}/>
 
                     <Switch>
                         <Route exact path='/login' component={LoginFormContaniner}/>
