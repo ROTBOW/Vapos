@@ -1,9 +1,6 @@
 import { RECEIVE_LOGIN, RECEIVE_LOGOUT } from '../actions/session_actions'
 
-let initState = {
-    id: 0,
-    username: ''
-}
+let initState = null
 
 const SessionReducer = (state = initState, action) => {
     Object.freeze(state);

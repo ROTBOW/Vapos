@@ -7,18 +7,18 @@ class NavBar extends React.Component {
 
     render(){
         return (
-            <ul className='navbar'>
-                {/* <li> 
-                    <button onClick={() => this.props.history.replace('/login')}>Login</button>
-                     <button onClick={() => this.props.history.replace('/user/new')}>Sign Up</button>
-                    </li> */}
-                <li>
-                    <Link to='/login'>Login</Link>
-                </li>
-                <li>
-                    <Link to='/user/new'>Sign Up</Link>
-                </li>
-            </ul>
+            <div className='navbar'>
+                <ul >
+
+            
+                </ul>
+
+                <div>
+                    <Link to='/login'><button>Login</button></Link>
+                    <Link to='/user/new'><button>Sign Up</button></Link>
+                </div>
+
+            </div>
         )
     }
 }
