@@ -7,7 +7,7 @@
     "start": "webpack --watch --mode=development",
     "postinstall": "webpack"
   },
-  "engines": {
+  "engines": { 
     "node": "10.13.0",
     "npm": "6.4.1"
   },
