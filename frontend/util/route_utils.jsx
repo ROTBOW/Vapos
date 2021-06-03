@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {Redirect, Route, withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => ({
-    loggedIn: Boolean(state.session.currentUser)
+    loggedIn: Boolean(state.sessionUser)
 })
 
 // <AuthRoute path='' componet={} />
