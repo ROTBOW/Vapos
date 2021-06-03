@@ -10,3 +10,5 @@ User.delete_all
 
 admin = User.new({username: 'admin', password: 'pinky', email: 'thisIsFakeBro@roads.com'})
 admin.save!
+
+demo = User.create({username: 'demo', password: 'demoboi55', email: 'thisIsFakeDemoboi@roads.com'})

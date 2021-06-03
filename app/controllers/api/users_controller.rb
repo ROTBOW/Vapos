@@ -11,7 +11,7 @@ class Api::UsersController < ApplicationController
         if @user.save
             render :create
         else
-            nil
+            flash[:user_errors] = @user.errors.full_messages
         end
     end
 

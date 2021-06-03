@@ -5,7 +5,7 @@ import SignUpForm from './signup_form';
 
 const mapStateToProps = state => {
     return {
-
+        errors: state.errors
     }
 }
 

@@ -9,7 +9,6 @@ const SessionReducer = (state = initState, action) => {
     switch(action.type){
 
         case RECEIVE_LOGIN:
-            debugger
             return action.user;
 
         case RECEIVE_LOGOUT:

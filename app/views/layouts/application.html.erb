@@ -24,9 +24,11 @@
       window.vaposLogo = "<%= image_url('ui/logo_vapos.png') %>";
     </script>
 
+
   </head>
 
   <body>
+    <%= react_component 'Alert', messages: flash_messages %>
     <%= yield %>
   </body>
 </html>

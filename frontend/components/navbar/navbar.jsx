@@ -3,9 +3,26 @@ import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
 
+    componentDidMount(){
+        let tempState = store.getState()
+        let tempUser = tempState['sessionUser']
+        this.setState({ login: !tempUser })
+    }
 
 
     render(){
+        let buttons;
+        
+        if (!this.props.currentUser) {
+            buttons = [
+            <Link to='/login' key='1' ><button>Login</button></Link>,
+            <Link to='/user/new' key='2 '><button>Sign Up</button></Link>
+            ]
+        } else {
+            buttons = <button onClick={this.props.sendLogout} >Log Out</button>;
+        }
+        
+
         return (
             <div className='navbar'>
                 <ul >
@@ -14,9 +31,7 @@ class NavBar extends React.Component {
                 </ul>
 
                 <div>
-                    <Link to='/login'><button>Login</button></Link>
-                    <Link to='/user/new'><button>Sign Up</button></Link>
-                    <button onClick={this.props.sendLogout} >Log Out</button>
+                    {buttons}
                 </div>
 
             </div>

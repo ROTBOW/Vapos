@@ -7,13 +7,24 @@ class LoginForm extends React.Component {
                 username: '',
                 password: '',
         }
+        this.demoUser = {
+            username: 'demo',
+            password: 'demoboi55',
+        }
 
         this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    demoLogin(e){
+        e.preventDefault();
+        this.props.sendLogin(this.demoUser)
+        this.props.history.replace('/')
     }
 
     handleSubmit(e) {
         e.preventDefault();
         this.props.sendLogin(this.state)
+        this.props.history.replace('/')
         
     }
 
@@ -41,6 +52,8 @@ class LoginForm extends React.Component {
 
                     <button type='submit'>Login</button>
                 </form>
+
+                <button onClick={this.demoLogin.bind(this)}>Demo User Login</button>
             </div>
         )
     }
