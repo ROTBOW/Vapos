@@ -25,6 +25,9 @@ class NavBar extends React.Component {
 
         return (
             <div className='navbar'>
+                
+                <Link to='/'><img src={window.vaposLogo} alt='Vapos logo'/></Link>
+
                 <ul >
 
             

@@ -11,7 +11,7 @@ class Api::UsersController < ApplicationController
         if @user.save
             render :create
         else
-            flash[:user_errors] = @user.errors.full_messages
+            render json: [@user.errors.full_messages], status: 401
         end
     end
 

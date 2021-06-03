@@ -1,4 +1,5 @@
 import React from 'react';
+import AlertList from '../errors/alert_lists';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -15,17 +16,25 @@ class LoginForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+    componentWillUnmount(){
+        this.props.resetErrors()
+    }
+
     demoLogin(e){
         e.preventDefault();
         this.props.sendLogin(this.demoUser)
         this.props.history.replace('/')
+        if (this.props.currentUser) {
+            this.props.history.replace('/')
+        }
     }
 
     handleSubmit(e) {
         e.preventDefault();
         this.props.sendLogin(this.state)
-        this.props.history.replace('/')
-        
+        if (this.props.currentUser) {
+            this.props.history.replace('/')
+        }
     }
 
     update(key){
@@ -33,8 +42,13 @@ class LoginForm extends React.Component {
     }
 
     render(){
+        let errors;
+        if (this.props.errors.length > 0) {
+            errors = <AlertList messages={this.props.errors}/>
+        }
         return (
             <div className='login-form'>
+                {errors}
                 <form onSubmit={this.handleSubmit}>
                     <label>Username:
                         <input

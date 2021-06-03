@@ -6,6 +6,7 @@ import SignUpFormContainer from './users/signup_form_container';
 import NavbarContainer from './navbar/navbar_container';
 import { ProtectedRoute, AuthRoute } from '../util/route_utils';
 import PageNotFound from './errors/404_page'
+import AlertList from './errors/alert_lists';
 
 
 // ProtectedRoute means you have to be logged on to see it
@@ -19,15 +20,11 @@ class App extends React.Component {
 
     render(){
         return (
-                <div>
-
-                    <Link to='/'><img src={window.vaposLogo} alt='Vapos logo'/></Link>
-
-                    
-
+                <div>       
                         <Route path='/' component={NavbarContainer}/>
 
                     <Switch>
+                        <Route path='/alert' render={(props) => (<AlertList messages={['bro']}/>)}/>
                         <AuthRoute path='/login' component={LoginFormContaniner}/>
                         <AuthRoute path='/user/new' component={SignUpFormContainer}/>
                         <Redirect to='/' />

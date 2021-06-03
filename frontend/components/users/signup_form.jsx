@@ -1,4 +1,6 @@
 import React from 'react';
+import AlertListContainer from '../errors/alert_list_container';
+
 
 
 
@@ -17,6 +19,10 @@ class SignUpForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentWillUnmount(){
+        this.props.resetErrors()
+    }
+
     update(key) {
         return e => this.setState({ [key]: e.currentTarget.value })
     }
@@ -24,18 +30,30 @@ class SignUpForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createUser(this.state);
-        let tempState = {
-            username: this.state.username,
-            password: this.state.password
+        // if (store.getState()['errors']['session']) {
+        //     console.log('')
+        // }
+
+        // let tempState = {
+        //     username: this.state.username,
+        //     password: this.state.password
+        // }
+        // this.props.sendLogin(tempState);
+        if (this.props.currentUser) {
+            this.props.history.replace('/login')
         }
-        this.props.sendLogin(tempState);
-        this.props.history.replace('/');
     }
 
 
     render(){
+        // console.log(this.props.errors)
+        let errors;
+        if (this.props.errors.length > 0) {
+            errors = <AlertListContainer/>
+        }
         return (
             <div>
+                {errors}
                 <form onSubmit={this.handleSubmit}>
 
                     <label>Username:

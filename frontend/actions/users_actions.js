@@ -1,4 +1,5 @@
 import * as UserAPIUtils from '../util/users_util'
+import { RECEIVE_SESSION_ERRORS } from './session_actions'
 
 
 export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
@@ -29,6 +30,11 @@ const removeUser = userId => {
     }
 }
 
+export const receiveErrors = errors => ({
+    type: RECEIVE_SESSION_ERRORS,
+    errors
+});
+
 export const fetchAllUsers = () => dispatch =>{
     return UserAPIUtils.fetchUsers()
         .then(users => dispatch(receiveAllUsers(users)))
@@ -39,10 +45,14 @@ export const fetchUser = userId => dispatch => {
         .then(user => dispatch(receiveUser(user)))
 }
 
-export const createUser = user => dispatch => {
-    return UserAPIUtils.createUser(user)
-        .then(user => dispatch(receiveUser(user)))
-}
+export const createUser = user => dispatch => (
+    UserAPIUtils.createUser(user).then(user => (
+        dispatch(receiveUser(user))
+    ), err => (
+        dispatch(receiveErrors(err.responseJSON))
+    ))
+);
+
 
 export const updateUser = user => dispatch => {
     return UserAPIUtils.updateUser(user)
@@ -51,5 +61,5 @@ export const updateUser = user => dispatch => {
 
 export const deleteUser = userId => dispatch => {
     return UserAPIUtils.updateUser(userId)
-        .then(() => dispatch(receiveUser(userId)))
+        .then(() => dispatch(removeUser(userId)))
 }
