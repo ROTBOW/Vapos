@@ -21,7 +21,6 @@ const receiveLogout = () => {
 export const sendLogin = user => dispatch => {
     return sessionApiUtil.login(user)
         .then(user => {
-            debugger
             return dispatch(receiveLogin(user))
         })
 }

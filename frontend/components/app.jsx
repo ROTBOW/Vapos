@@ -6,16 +6,13 @@ import SignUpFormContainer from './users/signup_form_container';
 import NavbarContainer from './navbar/navbar_container';
 
 
-import vaposLogo from '../../app/assets/images/ui/logo_vapos.png';
-console.log(vaposLogo)
-
 class App extends React.Component {
 
     render(){
         return (
                 <div>
 
-                    <Link to='/'><img scr={vaposLogo} alt='Vapos logo'/></Link>
+                    <Link to='/'><img src={window.vaposLogo} alt='Vapos logo'/></Link>
 
                     
 
