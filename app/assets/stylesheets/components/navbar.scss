@@ -1,0 +1,61 @@
+.navbar {
+    background-color: $navbar-color;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 130px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    > div {
+        display: flex;
+        align-items: center;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    ul li {
+        list-style: none;
+        background-color: $navbar-color;
+        color: $text-color;
+        padding-left: 10px;
+        margin-right: 10px;
+    }
+
+    ul li:hover {
+        color: $text-color-hover;
+        cursor: pointer;
+    }
+
+    > div a {
+        background-color: $navbar-color;
+        height: 40%;
+        
+    }
+
+    > div a img {
+        background-color: $navbar-color;
+        height: 100%;
+
+    }
+
+    .login-div {
+        display: flex;
+        align-items: flex-start;
+        height: 80%;
+    }
+
+    #login-link {
+        background-color: $navbar-color;
+        color: $text-color;
+        text-decoration: none;
+    }
+
+    #login-link:hover {
+        color: $text-color-hover;
+    }
+
+}

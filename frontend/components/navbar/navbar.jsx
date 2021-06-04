@@ -15,8 +15,7 @@ class NavBar extends React.Component {
         
         if (!this.props.currentUser) {
             buttons = [
-            <Link to='/login' key='1' ><button>Login</button></Link>,
-            <Link to='/user/new' key='2 '><button>Sign Up</button></Link>
+            <Link to='/login' key='1' id="login-link">login</Link>
             ]
         } else {
             buttons = <button onClick={this.props.sendLogout} >Log Out</button>;
@@ -26,14 +25,20 @@ class NavBar extends React.Component {
         return (
             <div className='navbar'>
                 
-                <Link to='/'><img src={window.vaposLogo} alt='Vapos logo'/></Link>
-
-                <ul >
-
-            
-                </ul>
-
                 <div>
+                    <Link to='/'><img src={window.vaposLogo} alt='Vapos logo'/></Link>
+
+                    <ul>
+
+                        <li>STORE</li>
+                        <li>COMMUNITY</li>
+                        <li>ABOUT</li>
+                        <li>SUPPORT</li>
+                
+                    </ul>
+                </div>
+
+                <div className='login-div'>
                     {buttons}
                 </div>
 

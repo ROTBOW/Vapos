@@ -1,5 +1,6 @@
 import React from 'react';
 import AlertContainer from '../errors/alert_container';
+import {Link} from 'react-router-dom';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -56,27 +57,33 @@ class LoginForm extends React.Component {
             })
         }
         return (
-            <div className='login-form'>
+            <div id="login-component">
                 {alerts}
-                <form onSubmit={this.handleSubmit}>
-                    <label>Username:
-                        <input
-                        type='text'
-                        onChange={this.update('username')}
-                        />
-                    </label>
+                <div id="login-left-side">
+                    <h2>SIGN IN</h2>
+                    <form onSubmit={this.handleSubmit} className='login-form'>
+                        <label>Vapos account name
+                            <input
+                            type='text'
+                            onChange={this.update('username')}
+                            />
+                        </label>
 
-                    <label>Password:
-                        <input
-                        type='password'
-                        onChange={this.update('password')}
-                        />
-                    </label>
+                        <label>Password
+                            <input
+                            type='password'
+                            onChange={this.update('password')}
+                            />
+                        </label>
 
-                    <button type='submit'>Login</button>
-                </form>
+                        <button type='submit'>Sign In</button>
+                    </form>
+                    <button onClick={this.demoLogin.bind(this)} id="demo-user-login">Demo User Login</button>
+                </div>
 
-                <button onClick={this.demoLogin.bind(this)}>Demo User Login</button>
+                <div id="login-right-side">
+                    <Link to='/user/new' key='1'><button>Sign Up</button></Link>
+                </div>
             </div>
         )
     }
