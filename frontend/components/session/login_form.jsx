@@ -58,7 +58,9 @@ class LoginForm extends React.Component {
         }
         return (
             <div id="login-component">
-                {alerts}
+                <div className='alerts-container'>
+                    {alerts}
+                </div>
                 <div id="login-left-side">
                     <h2>SIGN IN</h2>
                     <form onSubmit={this.handleSubmit} className='login-form'>

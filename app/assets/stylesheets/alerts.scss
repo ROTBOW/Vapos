@@ -1,6 +1,15 @@
+
+
+.alerts-container {
+    position: absolute;
+    right: 80px;
+    up: 20px;
+
+}
+
+
 .alert {
-    position: relative;
-    margin: 15px;
+    margin-top: 15px;
     border: 1px solid transparent;
     border-radius: .25rem;
     // width: 250px;
@@ -8,6 +17,26 @@
     box-sizing: border-box;
     padding: .75rem 1.25rem;
     font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        margin-left: 15px;
+        font-weight: bold;
+        border: none;
+        background-color: transparent;
+        color: #d3d3d3;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 6px;
+        padding-right: 6px;
+
+        &:hover {
+            color: white;
+            border: lightgray 1px solid;
+            border-radius: 15px;
+        }
+    }
 }
 
 .alert-warning {

@@ -64,7 +64,9 @@ class SignUpForm extends React.Component {
 
         return (
             <div>
-                {alerts}
+                <div className='alerts-container'>
+                    {alerts}
+                </div>
                 <h1 id="signup-form-title">CREATE YOUR ACCOUNT</h1>
                 <form onSubmit={this.handleSubmit} id="signup-form">
 
