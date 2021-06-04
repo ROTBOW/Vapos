@@ -7,6 +7,24 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     <% if current_user %>
+      <script>
+        window.currentUser = {
+          "id": <%= current_user.id %>,
+          "username": "<%= current_user.username %>"
+        }
+      </script>
+    <% else %>
+      <script>
+        window.currentUser = undefined
+      </script>
+    <% end %>
+
+    <script type="text/javascript">
+      window.vaposLogo = "<%= image_url('ui/logo_vapos.png') %>";
+    </script>
+
+
   </head>
 
   <body>

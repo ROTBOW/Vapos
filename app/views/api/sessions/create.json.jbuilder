@@ -1,1 +1,1 @@
-json.messages @messages
+json.extract! @user, :id, :username

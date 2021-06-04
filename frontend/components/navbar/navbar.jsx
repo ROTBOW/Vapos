@@ -3,19 +3,46 @@ import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
 
+    componentDidMount(){
+        let tempState = store.getState()
+        let tempUser = tempState['sessionUser']
+        this.setState({ login: !tempUser })
+    }
 
 
     render(){
+        let buttons;
+        
+        if (!this.props.currentUser) {
+            buttons = [
+            <Link to='/login' key='1' id="login-link">login</Link>
+            ]
+        } else {
+            buttons = <button onClick={this.props.sendLogout} >Log Out</button>;
+        }
+        
+
         return (
-            <ul className='navbar'>
-                {/* <li> 
-                    <button onClick={() => this.props.history.replace('/login')}>Login</button>
-                     <button onClick={() => this.props.history.replace('/user/new')}>Sign Up</button>
-                    </li> */}
-                <li>
-                    <Link to='/login'>Login</Link>
-                </li>
-            </ul>
+            <div className='navbar'>
+                
+                <div>
+                    <Link to='/'><img src={window.vaposLogo} alt='Vapos logo'/></Link>
+
+                    <ul>
+
+                        <li>STORE</li>
+                        <li>COMMUNITY</li>
+                        <li>ABOUT</li>
+                        <li>SUPPORT</li>
+                
+                    </ul>
+                </div>
+
+                <div className='login-div'>
+                    {buttons}
+                </div>
+
+            </div>
         )
     }
 }
