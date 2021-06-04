@@ -20,9 +20,9 @@ class SignUpForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    // componentWillUnmount(){
-    //     this.props.resetErrors()
-    // }
+    componentWillUnmount(){
+        this.props.resetErrors()
+    }
 
     update(key) {
         return e => this.setState({ [key]: e.currentTarget.value })
