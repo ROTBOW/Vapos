@@ -1,5 +1,5 @@
 import React from 'react';
-import AlertList from '../errors/alert_lists';
+import AlertContainer from '../errors/alert_container';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -42,13 +42,22 @@ class LoginForm extends React.Component {
     }
 
     render(){
-        let errors;
+
+        let alerts;
         if (this.props.errors.length > 0) {
-            errors = <AlertList messages={this.props.errors}/>
+            alerts = this.props.errors.map((error, idx) => {
+                return (
+                    <AlertContainer
+                        message={error}
+                        key={idx}
+                        idx={idx}
+                    />
+                )
+            })
         }
         return (
             <div className='login-form'>
-                {errors}
+                {alerts}
                 <form onSubmit={this.handleSubmit}>
                     <label>Username:
                         <input

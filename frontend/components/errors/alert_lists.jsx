@@ -1,16 +1,13 @@
 import React from 'react';
 import Alert from './alert';
-import { CSSTransitionGroup } from 'react-transition-group'
 
 
 class AlertList extends React.Component {
 
     constructor(props){
         super(props)
-        let tempMessages
-        (typeof this.props.errors === 'string') ? tempMessages = this.props.errors[0] : tempMessages = this.props.errors[0]
         this.state = {
-            messages: tempMessages
+            messages: this.props.errors
         }
 
         this.handleChildUnmount = this.handleChildUnmount.bind(this)
@@ -33,14 +30,7 @@ class AlertList extends React.Component {
             
     }
 
-    // componentDidUpdate() {
-    //     if (this.state) {
-
-    //     }
-    // }
-
     render(){
-        console.log(this.state.messages)
 
         let alerts;
         if (typeof this.state.messages != 'string') {

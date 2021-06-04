@@ -1,5 +1,5 @@
 import React from 'react';
-import AlertListContainer from '../errors/alert_list_container';
+import AlertContainer from '../errors/alert_container';
 
 
 
@@ -13,15 +13,16 @@ class SignUpForm extends React.Component {
         this.state = {
             username: '',
             email: '',
-            password: ''
+            password: '',
+            showErrors: false
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    componentWillUnmount(){
-        this.props.resetErrors()
-    }
+    // componentWillUnmount(){
+    //     this.props.resetErrors()
+    // }
 
     update(key) {
         return e => this.setState({ [key]: e.currentTarget.value })
@@ -29,16 +30,14 @@ class SignUpForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createUser(this.state);
-        // if (store.getState()['errors']['session']) {
-        //     console.log('')
-        // }
 
-        // let tempState = {
-        //     username: this.state.username,
-        //     password: this.state.password
-        // }
-        // this.props.sendLogin(tempState);
+        let newUser = {
+            username: this.state.username,
+            email: this.state.email,
+            password: this.state.password
+        }
+
+        this.props.createUser(newUser);
         if (this.props.currentUser) {
             this.props.history.replace('/login')
         }
@@ -46,14 +45,26 @@ class SignUpForm extends React.Component {
 
 
     render(){
-        // console.log(this.props.errors)
-        let errors;
+        
+        let alerts;
         if (this.props.errors.length > 0) {
-            errors = <AlertListContainer/>
+            alerts = this.props.errors.map((error, idx) => {
+                let timeout;
+                (idx === 0) ? timeout = 3000 : timeout = 3000 + (idx * 1000)
+                return (
+                    <AlertContainer
+                        message={error}
+                        key={idx}
+                        idx={idx}
+                        timeout={timeout}
+                    />
+                )
+            })
         }
+
         return (
             <div>
-                {errors}
+                {alerts}
                 <form onSubmit={this.handleSubmit}>
 
                     <label>Username:
