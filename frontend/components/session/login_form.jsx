@@ -81,9 +81,13 @@ class LoginForm extends React.Component {
                     <button onClick={this.demoLogin.bind(this)} id="demo-user-login">Demo User Login</button>
                 </div>
 
+
                 <div id="login-right-side">
-                    <Link to='/user/new' key='1'><button>Sign Up</button></Link>
+                    <p>Join Vapos and find <br/> of the [?] games to look at and not download</p>
+                    <Link to='/user/new' key='1'><button>Join Vapos</button></Link>
                 </div>
+
+
             </div>
         )
     }

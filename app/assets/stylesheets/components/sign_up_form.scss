@@ -1,0 +1,54 @@
+
+#signup-form-title {
+    color: $text-color;
+    font-size: 32px;
+    font-weight: 100;
+    margin-bottom: 40px;
+    margin-top: 70px;
+    margin-left: 20%;
+}
+
+#signup-form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+    color: $text-color;
+
+    label {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5%;
+
+        input {
+            margin-top: 2px;
+            width: 25%;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            background-color: #32353c;
+            color: white;
+            font-size: 100%;
+        }
+    }
+
+
+    button {
+        height: 35px;
+        width: 160px;
+        font-size: 100%;
+        color: $text-color;
+        margin-left: 5px;
+        background: linear-gradient( to right, #47bfff 5%, #1a44c2 60%);
+        background-position: 25%;
+        background-size: 330% 100%;
+        border: none;
+        border-radius: 3px;
+
+        &:hover{
+            color: $text-color-hover;
+            background: linear-gradient( to right, #47bfff 15%, #1a44c2 70%);
+            background-position: 25%;
+            background-size: 330% 100%;
+        }
+    }
+
+}

@@ -65,17 +65,10 @@ class SignUpForm extends React.Component {
         return (
             <div>
                 {alerts}
-                <form onSubmit={this.handleSubmit}>
+                <h1 id="signup-form-title">CREATE YOUR ACCOUNT</h1>
+                <form onSubmit={this.handleSubmit} id="signup-form">
 
-                    <label>Username:
-                        <input
-                        type="text"
-                        placeholder="Don't make it criggy now"
-                        onChange={this.update('username')}
-                        />
-                    </label>
-
-                    <label>Email:
+                    <label>Email Address
                         <input
                         type="text"
                         placeholder="14 when you made it"
@@ -83,7 +76,15 @@ class SignUpForm extends React.Component {
                         />
                     </label>
 
-                    <label>Password:
+                    <label>Username
+                        <input
+                        type="text"
+                        placeholder="Don't make it criggy now"
+                        onChange={this.update('username')}
+                        />
+                    </label>
+
+                    <label>Password
                         <input
                         type="password"
                         placeholder="Just don't put password"

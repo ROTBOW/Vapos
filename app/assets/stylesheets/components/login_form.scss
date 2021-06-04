@@ -5,66 +5,114 @@
 }
 
 #login-left-side {
-    width: 50%;
-    height: 100%;
+    width: 65%;
+    height: 800px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    background: linear-gradient( to left, #313436 5%, #272727 60%);
+    background: linear-gradient( to left, #313436 5%, transparent 150%);
     
     
     > h2 {
-        color: $text-color;
-        font-size: larger;
+        color: $text-color-hover;
+        font-size: 34px;
+        font-weight: 200;
+        margin-bottom: 40px;
     }
+
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        background-color: transparent;
+        color: $text-color;
+
+        
+        label {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        input {
+            margin-top: 5px;
+            border: none;
+            border-radius: 2px;
+            padding-right: 5%;
+            padding-top: 3px;
+            padding-bottom: 3px;
+        }
+        
+        button {
+            height: 35px;
+            width: 160px;
+            font-size: 100%;
+            color: $text-color;
+            margin-left: 5px;
+            background: linear-gradient( to right, #47bfff 5%, #1a44c2 60%);
+            background-position: 25%;
+            background-size: 330% 100%;
+            border: none;
+            border-radius: 3px;
+    
+            &:hover{
+                color: $text-color-hover;
+                background: linear-gradient( to right, #47bfff 15%, #1a44c2 70%);
+                background-position: 25%;
+                background-size: 330% 100%;
+            }
+        }
+    }
+
+
+    #demo-user-login {
+        background-color: transparent;
+        color: $text-color;
+        border: none;
+        margin-top: 20px;
+    
+        &:hover {
+            color: $text-color-hover
+        }
+    }
+    
+
 }
 
 #login-right-side {
-    height: 100%;
-    width: 50%;
-    margin-right: 40px;
-}
-
-.login-form {
+    background: linear-gradient( to bottom, #212429 80%, transparent 200%);
+    height: 800px;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    background-color: transparent;
-    color: $text-color;
 
-    label {
-        display: flex;
-        flex-direction: column;
+    p {
+        color: $text-color;
+        text-align: center;
+        margin-bottom: 50px;
     }
 
     button {
-        height: 35px;
-        width: 160px;
-        font-size: 100%;
+        background-color: transparent;
         color: $text-color;
-        background: linear-gradient( to right, #47bfff 5%, #1a44c2 60%);
-        box-shadow: 2px 2px 5px;
-        background-position: 25%;
-        background-size: 330% 100%;
-        border: none;
-        border-radius: 3px;
+        border: $text-color solid 1px;
+        font-size: 16px;
+        border-radius: 2px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 10px;
+        padding-left: 10px;
 
-        &:hover{
-            color: $text-color-hover;
-            background: linear-gradient( to right, #47bfff 15%, #1a44c2 70%);
-            background-position: 25%;
-            background-size: 330% 100%;
+        &:hover {
+            border: $text-color-hover solid 1.5px;
         }
     }
+
 }
 
-#demo-user-login {
-    background-color: transparent;
-    color: $text-color;
-    border: none;
-    margin-top: 20px;
 
-    &:hover {
-        color: $text-color-hover
-    }
-}
+
 
