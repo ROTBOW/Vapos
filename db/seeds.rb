@@ -59,3 +59,19 @@ Game.all.each do |game|
         owned: true
     })
 end
+
+demo_game_1 = UsersGame.create!({
+    user_id: demo.id,
+    game_id: from_the_depths.id,
+    owned: false
+})
+demo_game_2 = UsersGame.create({
+    user_id: demo.id,
+    game_id: war_thunder.id,
+    owned: true
+})
+demo_game_3 = UsersGame.create({
+    user_id: demo.id,
+    game_id: black_desert.id,
+    owned: true
+})

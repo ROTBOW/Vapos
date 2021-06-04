@@ -25,6 +25,32 @@ class User < ApplicationRecord
         through: :users_games,
         source: :game
 
+    def games_with_status # O(n^2) where n is the amount of games owned, haha crap thats not good
+        listed_games = games.as_json
+        game_relations = users_games.as_json
+        answer = []
+
+        listed_games.each do |game|
+            game_relations.each do |relation|
+                if game['id'] == relation['game_id']
+                    game['owned'] = relation['owned']
+                end
+            end
+            answer << game
+        end
+
+
+
+        return answer
+        
+    end
+
+    # has_many :products_with_status, -> {
+    #     joins(:products_tests).select("DISTINCT products.*, products_tests.status")
+    #     },
+    #     through: :products_tests,
+    #     class_name: "Product",
+    #     source: :product
     
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)

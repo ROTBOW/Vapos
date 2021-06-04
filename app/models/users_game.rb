@@ -11,7 +11,7 @@
 #
 class UsersGame < ApplicationRecord
     validates :user_id, uniqueness: { scope: :game_id}
-    validates :owned, presence: true
+    validates :owned, inclusion: { in: [ true, false ] }
 
     belongs_to :owner,
         foreign_key: :user_id,
@@ -22,3 +22,5 @@ class UsersGame < ApplicationRecord
         class_name: "Game"
 
 end
+
+

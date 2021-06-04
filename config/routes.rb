@@ -4,8 +4,14 @@ Rails.application.routes.draw do
   root to: 'static_pages#root'
 
   namespace :api, defaults: { format: :json } do 
+
     resources :users, only: [:show, :create]
+    get '/users/:id/games', to: 'users#games'
+
+    resources :games, only: [ :index, :show ]
+
     resource :session, only: [:create, :destroy]
+    
   end
   
 end

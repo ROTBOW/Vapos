@@ -16,6 +16,12 @@ class Api::UsersController < ApplicationController
         end
     end
 
+    def games
+        user = User.find_by(id: params[:id])
+        @games = user.games_with_status
+        render json: @games
+    end
+
     private
     def user_params
         params.require(:user).permit(:username, :email, :password)
