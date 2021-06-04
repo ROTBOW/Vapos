@@ -17,6 +17,14 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
     attr_reader :password
 
+    has_many :users_games,
+        foreign_key: :user_id,
+        class_name: "UsersGame"
+
+    has_many :games,
+        through: :users_games,
+        source: :game
+
     
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
