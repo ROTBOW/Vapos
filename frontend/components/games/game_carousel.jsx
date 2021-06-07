@@ -8,52 +8,52 @@ class GameCarousel extends React.Component {
     constructor(props){
         super(props)
 
-        // for (let i = 0; i < props.games.length; i++) {
-        //     tempMap[i] = props.games[i]
-        // }
-        console.log(this.props.str)
-
-        let tempMap = {}
-        let i = 0;
-        for (let id in this.props.games){
-            console.log(this.props.games[id].title);
-            if (this.props.str.split('*').includes(this.props.games[id].title)) {
-                tempMap[i] = this.props.games[id]
-                i++
-            }
-        }
-
-
         this.state = {
-            games: tempMap,
+            games: {},
             currentGame: 0
         }
-
         
     }
 
-    // componentDidMount() {
-    //     this.props.fetchGames();
-    // }
+    componentDidMount() {
+        this.props.fetchAllGames()
+    }
 
     render() {
 
-        // console.log(this.state)
+        let gamesMap = {};
+        let i = 0;
+        let tempStr = this.props.str.split('*')
+        for (let id in this.props.games){
+            if (tempStr.includes(this.props.games[id].title)) {
+                gamesMap[i] = this.props.games[id]
+                i++
+            }
+        }
+        if (Object.keys(gamesMap).length === 0) gamesMap = undefined;
+        // gamesMap = {id: null, title: 'placeholder-title', description: 'placeholder-desc', cost: 15.99, imagesUrl: null}
+        
+        if (gamesMap != undefined) {
+            console.log(gamesMap);
+                return (
+                    <div id="game-carousel">
+                    <button>left</button>
+                    {/* <Link> */}
 
-        return (
-            <div id="game-carousel">
-                <button>left</button>
-                {/* <Link> */}
+                    <img src='' alt={`${gamesMap[this.state.currentGame].title}`}/>
+                    <div>
+                        <p>this will be more info/images</p>
+                    </div>
 
-                <img src='' alt='game img'/>
-                <div>
-                    <p>this will be more info/images</p>
+                    {/* </Link> */}
+                    <button>right</button>
                 </div>
-
-                {/* </Link> */}
-                <button>right</button>
-            </div>
-        )
+            )
+        } else {
+            return (
+                <div>whoops</div>
+            )
+        }
     }
 
 }

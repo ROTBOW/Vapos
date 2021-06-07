@@ -10,7 +10,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchGames: () => dispatch(fetchAllGames())
+        fetchAllGames: () => dispatch(fetchAllGames())
     }
 }
 

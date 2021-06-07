@@ -8,39 +8,14 @@ class StoreHomePage extends React.Component {
 
     constructor(props) {
         super(props)
-
-        this.state = {
-            test: 'yo'
-        }
-
-        this.selectGames = this.selectGames.bind(this)
     }
-
+    
     componentDidMount() {
         this.props.fetchAllGames()
-        this.setState({test: 'testing bro'})
-    }
-
-    selectGames(str) {
-        let answer = [];
-        str = str.split('*')
-
-        for (let id in this.props.games) {
-            if (str.includes(this.props.games[id].title)) {
-                answer.push(this.props.games[id]);
-            }
-        }
-
-        if (answer.length === 0) {
-            return undefined;
-        } else {
-            return answer
-        }
     }
 
     render() {
-        
-        // console.log(this.selectGames('War Thunder'));
+        let str = 'War Thunder*From The Depths*Black Desert Online'
         
         return (
             <main>
@@ -57,11 +32,9 @@ class StoreHomePage extends React.Component {
                     <p>this will be the store-Bar</p>
 
                     <div>
-                        {/* {
-                            (this.state.test === '*') ?  : null
-                        } */}
+
+                        <GameCarouselContainer str={str}/>
                         
-                        <GameCarouselContainer str={this.state.test}/>
                     </div>
 
                     <div>
