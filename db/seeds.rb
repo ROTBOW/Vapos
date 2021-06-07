@@ -22,14 +22,14 @@ from_the_depths = Game.create({
     title: 'From The Depths',
     description: 'voxel wartime vehicle builder',
     cost: 24.99,
-    images_url: 'lol I have no idea how I\'m set images up'
+    images_url: 'from_the_depths'
     })
 
 supcom_fa = Game.create({
     title: 'Supreme Commander Forged Alliance',
     description: 'Best RTS ever made',
     cost: 12.99,
-    images_url: 'haha you thought'
+    images_url: 'supcom_fa'
 })
 black_desert = Game.create({
     title: 'Black Desert Online',
