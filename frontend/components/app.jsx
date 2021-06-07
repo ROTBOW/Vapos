@@ -7,14 +7,11 @@ import NavbarContainer from './navbar/navbar_container';
 import { ProtectedRoute, AuthRoute } from '../util/route_utils';
 import PageNotFound from './errors/404_page'
 import AlertList from './errors/alert_lists';
+import StoreHomePageContainer from './games/store_home_page_container';
 
 
 // ProtectedRoute means you have to be logged on to see it
 // AuthRoute is the opposite
-
-const Temp = () => (
-    <h1>this is a 404 error bro</h1>
-)
 
 class App extends React.Component {
 
@@ -27,6 +24,7 @@ class App extends React.Component {
                         <Route path='/alert' render={(props) => (<AlertList messages={['bro']}/>)}/>
                         <AuthRoute path='/login' component={LoginFormContaniner}/>
                         <AuthRoute path='/user/new' component={SignUpFormContainer}/>
+                        <Route path='/' component={StoreHomePageContainer}/>
                         <Redirect to='/' />
                     </Switch>
 

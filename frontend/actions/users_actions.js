@@ -1,5 +1,5 @@
-import * as UserAPIUtils from '../util/users_util'
-import { RECEIVE_SESSION_ERRORS } from './session_actions'
+import * as UserAPIUtils from '../util/users_util';
+import { RECEIVE_SESSION_ERRORS } from './session_actions';
 
 
 export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';

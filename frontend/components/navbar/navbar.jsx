@@ -30,7 +30,7 @@ class NavBar extends React.Component {
 
                     <ul>
 
-                        <li>STORE</li>
+                        <li><Link to='/'>STORE</Link></li>
                         <li>COMMUNITY</li>
                         <li>ABOUT</li>
                         <li>SUPPORT</li>
