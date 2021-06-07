@@ -15,10 +15,10 @@ class StoreHomePage extends React.Component {
     }
 
     render() {
-        let str = 'War Thunder*From The Depths*Black Desert Online'
+        let str = 'War Thunder*From The Depths*Black Desert Online*X3 Farnham\'s Legacy'
         
         return (
-            <main>
+            <main id="store-main">
 
                 <div className="store-left-wing">
                     <h1>welcome to the store page! this is the left wing</h1>
@@ -31,11 +31,9 @@ class StoreHomePage extends React.Component {
                     <h1>this is the right wing</h1>
                     <p>this will be the store-Bar</p>
 
-                    <div>
-
-                        <GameCarouselContainer str={str}/>
-                        
-                    </div>
+                    
+                    <GameCarouselContainer str={str}/>
+                    
 
                     <div>
                         <h2>this will be a game grid</h2>

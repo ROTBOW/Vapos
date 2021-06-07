@@ -1,0 +1,15 @@
+
+#store-main {
+    display: flex;
+    color: $text-color;
+
+
+    .store-left-wing{
+        width: 30%;
+    }
+
+    .store-right-wing{
+        width: 70%;
+        margin-left: 2%;
+    }
+}

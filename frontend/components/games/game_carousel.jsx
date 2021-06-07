@@ -9,14 +9,34 @@ class GameCarousel extends React.Component {
         super(props)
 
         this.state = {
-            games: {},
+            amount: this.props.str.split('*').length,
             currentGame: 0
         }
         
+        this.handleButton = this.handleButton.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchAllGames()
+    }
+
+    handleButton(direction) {
+        return e => {
+            if (direction === 'right') {
+                if (this.state.currentGame+1 <= this.state.amount-1) {
+                    this.setState({currentGame: this.state.currentGame + 1 })
+                } else {
+                    this.setState({currentGame: 0})
+                }
+            } else {
+                if (this.state.currentGame-1 >= 0) {
+                    this.setState({currentGame: this.state.currentGame - 1 })
+                } else {
+                    this.setState({currentGame: this.state.amount-1})
+                }
+
+            }
+        }
     }
 
     render() {
@@ -31,27 +51,50 @@ class GameCarousel extends React.Component {
             }
         }
         if (Object.keys(gamesMap).length === 0) gamesMap = undefined;
-        // gamesMap = {id: null, title: 'placeholder-title', description: 'placeholder-desc', cost: 15.99, imagesUrl: null}
+
+
+        
         
         if (gamesMap != undefined) {
-            console.log(gamesMap);
-                return (
-                    <div id="game-carousel">
-                    <button>left</button>
-                    {/* <Link> */}
+            let { currentGame } = this.state;
 
-                    <img src='' alt={`${gamesMap[this.state.currentGame].title}`}/>
-                    <div>
-                        <p>this will be more info/images</p>
+            let boxes = [];
+            for ( let game in gamesMap ) {
+                let posiClass = (game === currentGame.toString()) ? 'game-carousel-box-active' : '';
+                boxes.push(<div key={game} className={`game-carousel-box ${posiClass}`} onClick={e => this.setState({currentGame: Number(game)})}/>)
+            };
+
+
+                return (
+                <div id="game-carousel-container">
+                    <div id="game-carousel">
+                        <button onClick={this.handleButton('left')} >left</button>
+                        {/* <Link to={`/games/${gamesMap[currentGame].id}`}> */}
+
+                        <img src='' alt={`${gamesMap[currentGame].title}`}/>
+                        <div id="game-carousel-info">
+                            <h3>{`${gamesMap[currentGame].title}`}</h3>
+
+                            <img alt="this will be four images in grid"/>
+
+                            <h4>Now Available</h4>
+                            <p>${gamesMap[currentGame].cost}</p>
+
+                        </div>
+
+                        {/* </Link> */}
+                        <button onClick={this.handleButton('right')}>right</button>
                     </div>
 
-                    {/* </Link> */}
-                    <button>right</button>
+                    <div id="game-carousel-boxes">
+                        {boxes}
+                    </div>
+
                 </div>
             )
         } else {
             return (
-                <div>whoops</div>
+                <div>whoops, you shouldn't be seeing this haha...</div>
             )
         }
     }

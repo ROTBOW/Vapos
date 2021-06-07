@@ -1,0 +1,45 @@
+#game-carousel-container {
+    width: 70%;
+    height: auto;
+
+    #game-carousel-boxes {
+        display: flex;
+        justify-content: center;
+    }
+
+    .game-carousel-box {
+        width: 17px;
+        height: 11px;
+        border-radius: 30%;
+        background-color: darkgreen;
+        cursor: pointer;
+        margin-right: 4px;
+
+        &:hover {
+            background-color: green;
+        }
+    }
+    
+    .game-carousel-box-active{
+        background-color: red;
+
+        &:hover {
+            background-color: red;
+        }
+    }
+    
+
+    #game-carousel {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        color: $text-color;
+        background-color: gray;
+
+        
+        button {
+            // background-color: transparent;
+        }
+        
+    }
+}
