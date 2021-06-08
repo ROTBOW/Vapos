@@ -1,61 +1,65 @@
 #game-carousel-container {
     width: 70%;
     height: auto;
-
+    
     #game-carousel-boxes {
         display: flex;
         justify-content: center;
     }
-
+    
     .game-carousel-box {
         width: 17px;
         height: 11px;
         border-radius: 30%;
-        background-color: darkgreen;
+        background-color: rgb(68, 68, 68);
         cursor: pointer;
         margin-right: 4px;
-
+        margin-top: 5px;
+        
         &:hover {
-            background-color: green;
+            background-color: rgb(128, 128, 128);
         }
     }
     
     .game-carousel-box-active{
-        background-color: red;
-
+        background-color: rgb(128, 128, 128);
+        
         &:hover {
-            background-color: red;
+            background-color: rgb(128, 128, 128);
         }
     }
     
-
+    
     #game-carousel {
         width: 100%;
         display: flex;
         justify-content: center;
         color: $text-color;
-        background-color: gray;
+        background-color: rgba(97, 93, 93, 0.644);
+        // box-shadow: 0px 0px rgba(31, 31, 31, 0.253);
+        width: 961px;//961px;
+        height: auto;
+        box-shadow: 0 0 10px 5px #141414;
 
         a {
             display: flex;
             cursor: context-menu;
+            text-decoration: none;
+            color: $text-color;
         }
 
 
         > img {
-            max-width: 616px;
-            max-height: 353px;
-            width: auto;
-            height: auto;
+            width: 460px;
+            height: 215px;
+            margin-right: 50px;
         }
 
         
         input {
-            // background-color: transparent;
             width: 35px;
             height: 50px;
             align-self: center;
-            background-color: red;
             background: linear-gradient(to left, transparent 15%, #223671 60%);
 
             margin-right: 5px;
@@ -82,9 +86,45 @@
         }
 
         #game-carousel-info {
-            width: 400px;
-            height: auto;
-            padding-right: 150px;
+            width: 345px;
+            height: 353px;
+            background: rgb(68, 68, 68);
+
+            h3 {
+                width: 340px;
+                padding-top: 5px;
+                padding-bottom: 30px;
+                padding-left: 5px;
+                font-size: 26px;
+                color: #e6e6e6;
+                position: absolute;
+                background: transparent;
+            }
+
+            h4 {
+                padding-top: 15px;
+                padding-bottom: 30px;
+                padding-left: 5px;
+                font-size: 26px;
+                color: #e6e6e6;
+            }
+
+            p {
+                color: #9fcbe2;
+                margin-left: 15px;
+                margin-top: 27px;
+            }
+
+            #game-carousel-info-grid {
+                margin-top: 65px;
+                display: flex;
+                flex-wrap: wrap;
+                
+                img {
+                    margin-right: 10px;
+                    margin-top: 10px;
+                }
+            }
         }
         
     }

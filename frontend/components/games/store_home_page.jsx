@@ -16,7 +16,7 @@ class StoreHomePage extends React.Component {
     }
 
     render() {
-        let str = 'War Thunder*From The Depths*Black Desert Online*X3 Farnham\'s Legacy'
+        let str = 'War Thunder*From The Depths*Black Desert Online*X3 Farnham\'s Legacy*Supreme Commander Forged Alliance'
         
         return (
             <main id="store-main">
