@@ -14,7 +14,8 @@ const GamesReducer = (state = {}, action) => {
             return nextState;
 
         case RECEIVE_GAME_IMAGES: // prob gonna have to change this
-            return state;
+            nextState['images'] = action.images
+            return nextState;
 
         default:
             return state;

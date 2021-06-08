@@ -36,9 +36,55 @@
         color: $text-color;
         background-color: gray;
 
+        a {
+            display: flex;
+            cursor: context-menu;
+        }
+
+
+        > img {
+            max-width: 616px;
+            max-height: 353px;
+            width: auto;
+            height: auto;
+        }
+
         
-        button {
+        input {
             // background-color: transparent;
+            width: 35px;
+            height: 50px;
+            align-self: center;
+            background-color: red;
+            background: linear-gradient(to left, transparent 15%, #223671 60%);
+
+            margin-right: 5px;
+            margin-left: 5px;
+
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 4px;
+            padding-right: 4px;
+
+            &:hover {
+                background: linear-gradient(to left, transparent 15%, #585858 60%);
+            }
+
+            
+        }
+
+        #game-carousl-right-button {
+            background: linear-gradient(to right, transparent 15%, #223671 60%);
+
+            &:hover {
+                background: linear-gradient(to right, transparent 15%, #585858 60%);
+            }
+        }
+
+        #game-carousel-info {
+            width: 400px;
+            height: auto;
+            padding-right: 150px;
         }
         
     }

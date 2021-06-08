@@ -8,9 +8,7 @@
 
 User.delete_all
 
-admin = User.new({username: 'admin', password: 'pinky', email: 'thisIsFakeBro@roads.com'})
-admin.save!
-
+admin = User.create({username: 'admin', password: 'pinky', email: 'thisIsFakeBro@roads.com'})
 demo = User.create({username: 'demo', password: 'demoboi55', email: 'thisIsFakeDemoboi@roads.com'})
 
 
@@ -22,32 +20,33 @@ from_the_depths = Game.create({
     title: 'From The Depths',
     description: 'voxel wartime vehicle builder',
     cost: 24.99,
-    images_url: 'from_the_depths'
+    images_url: 'https://i.ibb.co/m9kj5r0/0-ftd.jpg<SEPA>https://i.ibb.co/s90xJqg/1-ftd.jpg<SEPA>https://i.ibb.co/KKTz6zv/2-ftd.jpg'
     })
 
 supcom_fa = Game.create({
     title: 'Supreme Commander Forged Alliance',
     description: 'Best RTS ever made',
     cost: 12.99,
-    images_url: 'supcom_fa'
+    images_url: 'https://i.ibb.co/FWH8zsc/0-supcomfa.jpg<SEPA>https://i.ibb.co/sJdWVW6/1-supcomfa.jpg<SEPA>https://i.ibb.co/WF66TNm/2-supcomfa.jpg'
 })
 black_desert = Game.create({
     title: 'Black Desert Online',
     description: 'Massive MMORPG, countless things to do. plus, pretty graphics',
     cost: 9.99,
-    images_url: 'zipo, as in nothing'
+    images_url: 'https://i.ibb.co/Cz0vv8D/0-bdo.jpg<SEPA>https://i.ibb.co/nCGmxSS/1-bdo.jpg<SEPA>https://i.ibb.co/rstsmjM/2-bdo.jpg<SEPA>https://i.ibb.co/xFFczss/3-bdo.jpg<SEPA>https://i.ibb.co/jhRLrx8/4-bdo.jpg'
+    
 })
 war_thunder = Game.create({
     title: 'War Thunder',
     description: 'War Thunder is the most comprehensive free-to-play, cross-platform, MMO military game dedicated to aviation, armoured vehicles, from the early 20th century to the most advanced modern combat units.',
     cost: 0,
-    images_url: 'got nothing for you'
+    images_url: 'https://i.ibb.co/Ldnj2Lc/0-wt.jpg<SEPA>https://i.ibb.co/zPy8xhQ/1-wt.jpg<SEPA>https://i.ibb.co/Dz1PjvX/2-wt.jpg<SEPA>https://i.ibb.co/mGR79tK/3-wt.jpg<SEPA>https://i.ibb.co/Wvb02kR/4-wt.jpg'
 })
 x3_farnhams_legacy = Game.create({
     title: 'X3 Farnham\'s Legacy',
     description: 'The classic X3 game is brought back to life with this remaster of a masterpiece',
     cost: 0,
-    images_url: 'hahahahahaha'
+    images_url: 'https://i.ibb.co/D8hGqq1/0-x3fl.jpg<SEPA>https://i.ibb.co/1GW5fvJ/1-x3fl.jpg<SEPA>https://i.ibb.co/ckNMvSN/2-x3fl.jpg<SEPA>https://i.ibb.co/N73VNVP/3-x3fl.jpg<SEPA>https://i.ibb.co/FK8zpCW/4-x3fl.jpg'
 })
 
 UsersGame.delete_all

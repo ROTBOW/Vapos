@@ -1,6 +1,6 @@
 
+game_imgs = @game.images_url.split('<SEPA>')
 
 
-json.set! @game.id do
-    json.extract! @game, :id, :title, :cost, :description, :images_url
-end
+json.extract! @game, :id, :title, :cost, :description
+json.images game_imgs

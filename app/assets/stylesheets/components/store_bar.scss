@@ -1,0 +1,30 @@
+#store-bar {
+    display: flex;
+    background: linear-gradient( to right, #47bfff 5%, #10226f 60%);
+    font-weight: bold;
+    width: 100%;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+    // margin-right: 100px;
+    margin-bottom: 60px;
+
+    ul {
+        display: flex;
+        
+        li {
+            margin-right: 15px;
+            padding-left: 4px;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            
+            color: #d3d3d0;
+            text-shadow: 1px 1px black;
+            
+
+            &:hover {
+                background: linear-gradient( to left, transparent 15%, #4661da 60%);
+            }
+        }
+    }
+}

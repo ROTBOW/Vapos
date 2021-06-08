@@ -1,6 +1,7 @@
 import React from 'react';
-import GameCarousel from './game_carousel';
 import GameCarouselContainer from './game_carousel_container';
+import GameListContainer from './game_list_container';
+import StoreBar from './store_bar';
 
 
 
@@ -10,7 +11,7 @@ class StoreHomePage extends React.Component {
         super(props)
     }
     
-    componentDidMount() {
+    componentDidMount() { //gonna leave this for now but might not need it
         this.props.fetchAllGames()
     }
 
@@ -28,15 +29,16 @@ class StoreHomePage extends React.Component {
 
 
                 <div className="store-right-wing">
+                    <StoreBar/>
+                    
                     <h1>this is the right wing</h1>
-                    <p>this will be the store-Bar</p>
 
                     
                     <GameCarouselContainer str={str}/>
                     
 
                     <div>
-                        <h2>this will be a game grid</h2>
+                        <GameListContainer/>
                     </div>
                 </div>
 

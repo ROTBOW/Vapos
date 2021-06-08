@@ -52,7 +52,7 @@ class GameCarousel extends React.Component {
         }
         if (Object.keys(gamesMap).length === 0) gamesMap = undefined;
 
-
+        
         
         
         if (gamesMap != undefined) {
@@ -68,10 +68,13 @@ class GameCarousel extends React.Component {
                 return (
                 <div id="game-carousel-container">
                     <div id="game-carousel">
-                        <button onClick={this.handleButton('left')} >left</button>
-                        {/* <Link to={`/games/${gamesMap[currentGame].id}`}> */}
+            
+                        <input type="image" src={window.leftButton} onClick={this.handleButton('left')}/>
+                        <Link to={`/games/${gamesMap[currentGame].id}`}>
 
-                        <img src='' alt={`${gamesMap[currentGame].title}`}/>
+
+                        <img src={gamesMap[currentGame].images[0]} alt={`${gamesMap[currentGame].title}`} border="0"/>
+
                         <div id="game-carousel-info">
                             <h3>{`${gamesMap[currentGame].title}`}</h3>
 
@@ -82,8 +85,8 @@ class GameCarousel extends React.Component {
 
                         </div>
 
-                        {/* </Link> */}
-                        <button onClick={this.handleButton('right')}>right</button>
+                        </Link>
+                        <input type="image" src={window.rightButton} onClick={this.handleButton('right')} id="game-carousl-right-button"/>
                     </div>
 
                     <div id="game-carousel-boxes">

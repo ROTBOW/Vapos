@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchAllGames } from '../../actions/games_actions';
+import { fetchAllGames, fetchGameImages } from '../../actions/games_actions';
 import GameCarousel from './game_carousel';
 
 const mapStateToProps = state => {
@@ -10,7 +10,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchAllGames: () => dispatch(fetchAllGames())
+        fetchAllGames: () => dispatch(fetchAllGames()),
+        fetchGameImages: gameUrl => dispatch(gameUrl)
     }
 }
 
