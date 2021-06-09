@@ -79,4 +79,31 @@
         }
     }
 
+    #queue-bar {
+        width: 945px;
+        height: 70px;
+        background: #262f42cb;
+        display: flex;
+        align-items: center;
+
+        button {
+            width: 160px;
+            height: 30px;
+            margin-left: 20px;
+
+            font-size: 16px;
+
+            background: #3454b37d;
+            color: #74cdfc;
+            border: none;
+            border-radius: 2px;
+
+            &:hover {
+                background: #6a87e07d;
+                color: #ffffff;
+                cursor: pointer;
+            }
+        }
+    }
+
 }

@@ -9,7 +9,8 @@ class GamePage extends React.Component {
     constructor(props){
         super(props)
 
-        this.handleClick = this.handleClick.bind(this)
+        this.handleBuyButton = this.handleBuyButton.bind(this)
+        this.handleWishlistButton = this.handleWishlistButton.bind(this)
     }
 
     componentDidMount() {
@@ -17,9 +18,22 @@ class GamePage extends React.Component {
     }
 
 
-    handleClick(e){
+    handleBuyButton(e){
         e.preventDefault();
-        console.log(this.props.currentUser);
+        if (!!this.props.currentUser) {
+            console.log('this doesn\'t do anything yet but it will');
+        } else {
+            this.props.history.replace('/login');
+        }
+    }
+
+    handleWishlistButton(e){
+        e.preventDefault();
+        if (!!this.props.currentUser) {
+            console.log('this doesn\'t do anything yet but it will');
+        } else {
+            this.props.history.replace('/login');
+        }
     }
 
 
@@ -62,10 +76,13 @@ class GamePage extends React.Component {
                         </div>
 
                     </div>
+                    <div id="queue-bar">
+                        <button onClick={this.handleWishlistButton} >Add to your wishlist</button>
+                    </div>
 
                     <h2>{buyButton[0]} {game.title}</h2>
                     <label>{buyButton[1]}
-                        <button onClick={this.handleClick}>{buyButton[2]}</button>
+                        <button onClick={this.handleBuyButton}>{buyButton[2]}</button>
                     </label>
 
                 </div>
