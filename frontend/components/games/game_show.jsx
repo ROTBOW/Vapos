@@ -1,11 +1,12 @@
 import React from 'react';
 import StoreBar from './store_bar';
+import GameImageCarousel from './game_image_carousel';
 
 
 class GamePage extends React.Component {
 
     componentDidMount() {
-        this.props.fetchGame(this.props.match.params.gameId)
+        this.props.fetchGame(this.props.match.params.gameId);
     }
 
     render(){
@@ -17,14 +18,24 @@ class GamePage extends React.Component {
             return (
                 <div>
                     <StoreBar/>
+
                     <h1>{game.title}</h1>
 
-                    <img src={game.images[0]}/>
-                    <p>{game.description}</p>
+                    <div id="game-show-main-widow">
 
-                    <label>${game.cost}
-                        <button>Add to Cart</button>
-                    </label>
+                        <GameImageCarousel images={game.images.slice(1)}/>
+
+                        <div id="game-show-right-wing">
+                            <img src={game.images[0]} width="324" height="151" />
+                            <p>{game.description}</p>
+
+                        </div>
+
+                    </div>
+                            <label>${game.cost}
+                                <button>Add to Cart</button>
+                            </label>
+
                 </div>
             )
         }

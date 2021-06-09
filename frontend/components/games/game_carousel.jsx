@@ -43,7 +43,7 @@ class GameCarousel extends React.Component {
         if (arr.length != 4) {
             let numForKey = arr.length;
             while (arr.length < 4) {
-                arr.push(<img src="https://plchldr.co/i/162x69" alt="game_placeholder_bro" key={numForKey+1}/>)
+                arr.push(<img src="https://plchldr.co/i/162x69?text=crap" alt="game_placeholder_bro" key={numForKey+1}/>)
                 numForKey++
             }
             return arr;
@@ -81,7 +81,7 @@ class GameCarousel extends React.Component {
             let image_grid = []
             let game_cost = (gamesMap[currentGame].cost === 0) ? 'Free' : `$${gamesMap[currentGame].cost}`;
             gamesMap[currentGame].images.map((image, idx) => {
-                if (idx != 0) {
+                if (idx != 0 && idx <= 4) {
                      image_grid.push(<img key={idx} src={image} width="162" height="69" />)
                 }
             })

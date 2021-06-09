@@ -20,7 +20,7 @@ from_the_depths = Game.create({
     title: 'From The Depths',
     description: 'voxel wartime vehicle builder',
     cost: 24.99,
-    images_url: 'https://i.ibb.co/m9kj5r0/0-ftd.jpg<SEPA>https://i.ibb.co/s90xJqg/1-ftd.jpg<SEPA>https://i.ibb.co/KKTz6zv/2-ftd.jpg'
+    images_url: 'https://i.ibb.co/nwn1BVw/0-ftd.jpg<SEPA>https://i.ibb.co/m9kj5r0/1-ftd.jpg<SEPA>https://i.ibb.co/s90xJqg/2-ftd.jpg<SEPA>https://i.ibb.co/KKTz6zv/3-ftd.jpg<SEPA>https://i.ibb.co/72SrYLC/4-ftd.jpg<SEPA>https://i.ibb.co/tZJ0mVg/5-ftd.jpg'
     })
 
 supcom_fa = Game.create({
