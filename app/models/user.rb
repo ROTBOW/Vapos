@@ -28,20 +28,19 @@ class User < ApplicationRecord
     def games_with_status # O(n^2) where n is the amount of games owned, haha crap thats not good
         listed_games = games.as_json
         game_relations = users_games.as_json
-        answer = []
+        storage = {}
 
         listed_games.each do |game|
             game_relations.each do |relation|
                 if game['id'] == relation['game_id']
                     game['owned'] = relation['owned']
+                    storage[relation['id']] = game
+                    break
                 end
             end
-            answer << game
         end
 
-
-
-        return answer
+        return storage
         
     end
 

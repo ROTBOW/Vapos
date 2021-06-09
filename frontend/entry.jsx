@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { fetchRelations } from './actions/users_games_actions';
 import Root from './components/root';
 
 
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let store = configureStore(preloadedState)
 
     window.store = store
+    window.fetchRelations = fetchRelations
     
     ReactDOM.render(<Root store={store}/>, root)
 })

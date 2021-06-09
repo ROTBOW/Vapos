@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { fetchGame } from '../../actions/games_actions'
+import { fetchGame } from '../../actions/games_actions';
+import { createRelation } from '../../actions/users_games_actions';
 import GamePage from './game_show';
 
 
@@ -12,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchGame: gameId => dispatch(fetchGame(gameId))
+        fetchGame: gameId => dispatch(fetchGame(gameId)),
+        addToWishlist: relation => dispatch(createRelation(relation))
     }
 }
 

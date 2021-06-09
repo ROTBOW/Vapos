@@ -10,7 +10,7 @@
 #  updated_at :datetime         not null
 #
 class UsersGame < ApplicationRecord
-    validates :user_id, uniqueness: { scope: :game_id}
+    validates :user_id, uniqueness: { scope: [ :user_id, :game_id]}
     validates :owned, inclusion: { in: [ true, false ] }
 
     belongs_to :owner,

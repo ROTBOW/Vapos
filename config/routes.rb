@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     resources :games, only: [ :index, :show ]
     get '/games/images/:images_url', to: 'games#images'
 
+    resources :users_games, only: [:show, :destroy, :create]
+    # post 'games/:game_id/:id', to: 'users_games#create'
+
     resource :session, only: [:create, :destroy]
     
   end

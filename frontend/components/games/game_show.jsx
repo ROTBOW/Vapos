@@ -30,7 +30,13 @@ class GamePage extends React.Component {
     handleWishlistButton(e){
         e.preventDefault();
         if (!!this.props.currentUser) {
-            console.log('this doesn\'t do anything yet but it will');
+            this.props.addToWishlist({
+                relation: {
+                    user_id: this.props.currentUser.id,
+                    game_id: this.props.game.id,
+                    owned: false
+                }
+            })
         } else {
             this.props.history.replace('/login');
         }
