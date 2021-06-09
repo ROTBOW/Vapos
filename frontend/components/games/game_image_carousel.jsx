@@ -45,21 +45,32 @@ class GameImageCarousel extends React.Component {
  
     render() {
         let images = this.props.images;
-        images = this.addFive(images)
         let currentImg = this.state.currentImg;
         
-        let imagesMapped = images.map((image, idx) => (<img src={image} width="115" height="65" key={idx} onClick={e => this.setState({currentImg: idx})}/>))
+        let imagesMapped = images.map((image, idx) => {
+            let selectedCheck = (currentImg === idx)  ? 'selected' : '';
+            return (<img
+                src={image}
+                width="115"
+                height="65"
+                key={idx}
+                onClick={e => this.setState({currentImg: idx})}
+                className={selectedCheck}
+            />)
+        })
+
+        // imagesMapped = this.addFive(imagesMapped)
 
 
         return (
-            <div id="game-show-right-left" >
+            <div id="game-show-left-wing" >
                 <img src={images[currentImg]} width="600" height="337" />
 
-                <div>
+                <div id="game-show-undercarriage">
                     {imagesMapped}
                 </div>
-                <button onClick={this.handleButton('left')} >push</button>
-                <button onClick={this.handleButton('right')} >push</button>
+                <button onClick={this.handleButton('left')} >left</button>
+                <button onClick={this.handleButton('right')} >right</button>
 
             </div>
         )

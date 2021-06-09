@@ -1,0 +1,20 @@
+
+#game-show-left-wing{
+    // background-color: red;
+    width: 600px;
+
+    #game-show-undercarriage {
+        display: flex;
+        height: 88px;
+        overflow-y: auto;
+
+        .selected{
+            border: 4px rgb(194, 194, 194) solid;
+        }
+    }
+
+    .slide {
+        flex-shrink: 0;
+        height: 100%;
+    }
+}
