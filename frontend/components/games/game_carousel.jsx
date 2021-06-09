@@ -10,7 +10,8 @@ class GameCarousel extends React.Component {
 
         this.state = {
             amount: this.props.str.split('*').length,
-            currentGame: 0
+            currentGame: 0,
+            currentImg: 0
         }
         
         this.handleButton = this.handleButton.bind(this);
@@ -18,6 +19,14 @@ class GameCarousel extends React.Component {
 
     componentDidMount() {
         this.props.fetchAllGames()
+        this.timer = setInterval(
+            this.handleButton('right'),
+            8000
+        )
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.timer)
     }
 
     handleButton(direction) {
@@ -43,7 +52,13 @@ class GameCarousel extends React.Component {
         if (arr.length != 4) {
             let numForKey = arr.length;
             while (arr.length < 4) {
-                arr.push(<img src="https://plchldr.co/i/162x69?text=crap" alt="game_placeholder_bro" key={numForKey+1}/>)
+                arr.push(<img
+                            src="https://plchldr.co/i/162x69?text=crap"
+                            alt="game_placeholder_bro"
+                            key={numForKey+1}
+                            width="162"
+                            height="69"
+                        />)
                 numForKey++
             }
             return arr;
@@ -78,11 +93,20 @@ class GameCarousel extends React.Component {
             };
 
 
-            let image_grid = []
             let game_cost = (gamesMap[currentGame].cost === 0) ? 'Free' : `$${gamesMap[currentGame].cost}`;
+
+            let image_grid = []
             gamesMap[currentGame].images.map((image, idx) => {
                 if (idx != 0 && idx <= 4) {
-                     image_grid.push(<img key={idx} src={image} width="162" height="69" />)
+                     image_grid.push(
+                        <img
+                            key={idx}
+                            src={image}
+                            width="162"
+                            height="69"
+                            onMouseEnter={e => this.setState({currentImg: idx})}
+                            onMouseLeave={e => this.setState({currentImg: 0})}
+                        />)
                 }
             })
             image_grid = this.fillInSpace(image_grid)
@@ -96,7 +120,7 @@ class GameCarousel extends React.Component {
                         <Link to={`/games/${gamesMap[currentGame].id}`}>
 
 
-                        <img src={gamesMap[currentGame].images[0]} alt={`${gamesMap[currentGame].title}`} border="0" width="616" height="353" />
+                        <img src={gamesMap[currentGame].images[this.state.currentImg]} alt={`${gamesMap[currentGame].title}`} border="0" width="616" height="353" />
 
                         <div id="game-carousel-info">
                             <h3>{`${gamesMap[currentGame].title}`}</h3>

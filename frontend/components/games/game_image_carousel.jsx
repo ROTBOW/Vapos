@@ -59,7 +59,7 @@ class GameImageCarousel extends React.Component {
             />)
         })
 
-        // imagesMapped = this.addFive(imagesMapped)
+        imagesMapped = this.addFive(imagesMapped)
 
 
         return (
@@ -69,9 +69,8 @@ class GameImageCarousel extends React.Component {
                 <div id="game-show-undercarriage">
                     {imagesMapped}
                 </div>
-                <button onClick={this.handleButton('left')} >left</button>
-                <button onClick={this.handleButton('right')} >right</button>
-
+                <input type="image" src={window.leftButton} onClick={this.handleButton('left')}/>
+                <input type="image" src={window.rightButton} onClick={this.handleButton('right')} id="image-carousel-right-button"/>
             </div>
         )
     }

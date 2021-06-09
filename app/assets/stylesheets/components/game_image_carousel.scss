@@ -3,18 +3,67 @@
     // background-color: red;
     width: 600px;
 
+    input {
+        position: relative;
+        background: rgb(1, 77, 139);
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-left: 5px;
+        padding-right: 5px;
+        width: 19px;
+        height: 14px;
+        top: -16px;
+        border-radius: 5px;
+
+    }
+
+    #image-carousel-right-button {
+        left: 555px;
+    }
+    
     #game-show-undercarriage {
         display: flex;
-        height: 88px;
-        overflow-y: auto;
+        height: 90px;
+        overflow: auto hidden;
+        margin-top: 3px;
+        align-items: center;
+
+        
+        img {
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
 
         .selected{
             border: 4px rgb(194, 194, 194) solid;
         }
+
+        &::-webkit-scrollbar{
+            height: 17px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #202f3f;
+            border-radius: 5px;
+            width: 5px;
+            height: 15px;
+
+            &:hover {
+                background: #3f5d7e;
+            }
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #111920;
+            border-radius: 20px;
+            margin-right: 25px;
+            margin-left: 25px;
+
+        }
     }
 
-    .slide {
-        flex-shrink: 0;
-        height: 100%;
-    }
+    // .slide {
+    //     flex-shrink: 0;
+    //     height: 100%;
+    // }
 }

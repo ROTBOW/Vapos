@@ -17,15 +17,16 @@
 
     }
 
-    ul li {
+    ul li, ul a {
         list-style: none;
+        text-decoration: none;
         background-color: $navbar-color;
         color: $text-color;
         padding-left: 10px;
         margin-right: 10px;
     }
 
-    ul li:hover {
+    ul li:hover, ul a:hover {
         color: $text-color-hover;
         cursor: pointer;
     }

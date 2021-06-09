@@ -31,15 +31,15 @@ class StoreHomePage extends React.Component {
                 <div className="store-right-wing">
                     <StoreBar/>
                     
-                    <h1>this is the right wing</h1>
+                    {/* <h1>this is the right wing</h1> */}
 
                     
                     <GameCarouselContainer str={str}/>
                     
 
-                    <div>
+                    {/* <div>
                         <GameListContainer/>
-                    </div>
+                    </div> */}
                 </div>
 
 
