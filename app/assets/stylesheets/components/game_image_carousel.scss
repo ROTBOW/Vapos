@@ -1,11 +1,11 @@
 
 #game-show-left-wing{
-    // background-color: red;
+    background: $game-show-color;
     width: 600px;
 
     input {
         position: relative;
-        background: rgb(1, 77, 139);
+        background: rgb(20, 79, 128);
         padding-top: 3px;
         padding-bottom: 3px;
         padding-left: 5px;
@@ -15,6 +15,9 @@
         top: -16px;
         border-radius: 5px;
 
+        &:hover {
+            background: rgb(2, 96, 173);
+        }
     }
 
     #image-carousel-right-button {
@@ -27,6 +30,7 @@
         overflow: auto hidden;
         margin-top: 3px;
         align-items: center;
+        background: transparent;
 
         
         img {

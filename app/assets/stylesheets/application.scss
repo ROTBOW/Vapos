@@ -16,15 +16,16 @@
 
  @import 'consts/colors';
  @import 'reset';
- 
- 
- 
  @import 'alerts';
+ @import 'static_pages';
+ 
+ 
+ 
  @import 'components/navbar';
  @import 'components/login_form';
  @import 'components/sign_up_form';
  @import 'components/game_carousel';
  @import 'components/game_image_carousel';
+ @import 'components/game_show_page';
  @import 'components/store_home_page';
  @import 'components/store_bar';
- @import 'static_pages';

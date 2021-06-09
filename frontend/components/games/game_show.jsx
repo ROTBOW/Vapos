@@ -15,13 +15,29 @@ class GamePage extends React.Component {
             return <div>crap, im broken again</div>
         } else {
             let game = this.props.game;
+
+            let buyButton;
+            if (game.cost === 0) {
+                buyButton = [
+                    'Play',
+                    'Free',
+                    'Add To Library'
+                ]
+            } else {
+                buyButton = [
+                    'Buy',
+                    `$${game.cost}`,
+                    'Add To Cart'
+                ]
+            }
+
             return (
-                <div>
+                <div className="game-show-page">
                     <StoreBar/>
 
                     <h1>{game.title}</h1>
 
-                    <div id="game-show-main-widow">
+                    <div id="game-show-main-window">
 
                         <GameImageCarousel images={game.images.slice(1)}/>
 
@@ -32,9 +48,11 @@ class GamePage extends React.Component {
                         </div>
 
                     </div>
-                            <label>${game.cost}
-                                <button>Add to Cart</button>
-                            </label>
+
+                    <h2>{buyButton[0]} {game.title}</h2>
+                    <label>{buyButton[1]}
+                        <button>{buyButton[2]}</button>
+                    </label>
 
                 </div>
             )

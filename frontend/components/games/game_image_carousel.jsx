@@ -59,7 +59,7 @@ class GameImageCarousel extends React.Component {
             />)
         })
 
-        imagesMapped = this.addFive(imagesMapped)
+        // imagesMapped = this.addFive(imagesMapped)
 
 
         return (
