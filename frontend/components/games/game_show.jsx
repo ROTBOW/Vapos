@@ -5,9 +5,23 @@ import GameImageCarousel from './game_image_carousel';
 
 class GamePage extends React.Component {
 
+
+    constructor(props){
+        super(props)
+
+        this.handleClick = this.handleClick.bind(this)
+    }
+
     componentDidMount() {
         this.props.fetchGame(this.props.match.params.gameId);
     }
+
+
+    handleClick(e){
+        e.preventDefault();
+        console.log(this.props.currentUser);
+    }
+
 
     render(){
         
@@ -51,7 +65,7 @@ class GamePage extends React.Component {
 
                     <h2>{buyButton[0]} {game.title}</h2>
                     <label>{buyButton[1]}
-                        <button>{buyButton[2]}</button>
+                        <button onClick={this.handleClick}>{buyButton[2]}</button>
                     </label>
 
                 </div>

@@ -69,6 +69,12 @@
             font-size: 14px;
             border: none;
             border-radius: 2px;
+            cursor: pointer;
+
+            &:hover {
+                background: rgb(107, 179, 35);
+                color: #e2eed1;
+            }
 
         }
     }

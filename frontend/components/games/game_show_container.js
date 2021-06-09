@@ -5,7 +5,8 @@ import GamePage from './game_show';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        game: state.entities.games[ownProps.match.params.gameId]
+        game: state.entities.games[ownProps.match.params.gameId],
+        currentUser: state.sessionUser
     }
 }
 
