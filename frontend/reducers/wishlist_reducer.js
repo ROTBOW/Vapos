@@ -6,7 +6,7 @@ let weedOutOwned = (pojo) => {
 
     for (let relation in pojo) {
         if (pojo[relation].owned === false) {
-            answer[pojo[relation].id] = pojo[relation]
+            answer[pojo[relation].relation_id] = pojo[relation]
         }
     }
 
@@ -25,8 +25,7 @@ const WishlistReducer = ( state = {}, action ) => {
             return temp
 
         case RECEIVE_RELATION:
-            debugger
-            nextState[action.relation.id] = action.relation
+            nextState[action.relation.relation_id] = action.relation
             return nextState;
 
         case REMOVE_RELATION:

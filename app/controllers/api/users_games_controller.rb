@@ -9,7 +9,10 @@ class Api::UsersGamesController < ApplicationController
     def create
         @relation = UsersGame.new(usersgames_params)
         if @relation.save!
-            render json: @relation.as_json
+            game = Game.find_by(id: @relation['game_id']).as_json
+            game['owned'] = @relation['owned']
+            game['relation_id'] = @relation['id']
+            render json: game
         else
             render json: @relation.errors.full_messages, status: 401
         end

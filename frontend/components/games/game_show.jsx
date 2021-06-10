@@ -11,10 +11,16 @@ class GamePage extends React.Component {
 
         this.handleBuyButton = this.handleBuyButton.bind(this)
         this.handleWishlistButton = this.handleWishlistButton.bind(this)
+        this.removeWishlistButton = this.removeWishlistButton.bind(this)
+        this.findMeInWishlist = this.findMeInWishlist.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchGame(this.props.match.params.gameId);
+
+        if (!!this.props.currentUser) {
+            this.props.fetchRelations(this.props.currentUser.id)
+        }
     }
 
 
@@ -37,8 +43,30 @@ class GamePage extends React.Component {
                     owned: false
                 }
             })
+            this.forceUpdate();
         } else {
             this.props.history.replace('/login');
+        }
+    }
+
+    removeWishlistButton(relationId){
+        return e => {e.preventDefault();
+            if (!!this.props.currentUser) {
+                this.props.removeFromWishlist(relationId)
+                this.forceUpdate();
+            } else {
+                this.props.history.replace('/login');
+            }
+        }
+    }
+
+    findMeInWishlist() {
+        let wishlist = this.props.wishlist;
+
+        for (let relation in wishlist) {
+            if (wishlist[relation].id === this.props.game.id) {
+                return wishlist[relation].relation_id
+            }
         }
     }
 
@@ -49,6 +77,13 @@ class GamePage extends React.Component {
             return <div>crap, im broken again</div>
         } else {
             let game = this.props.game;
+            
+            let wishlistButton;
+            if (this.findMeInWishlist(this.props.wishlist) === undefined) {
+                wishlistButton = <button onClick={this.handleWishlistButton} >Add to your wishlist</button>
+            } else {
+                wishlistButton = <button onClick={this.removeWishlistButton(this.findMeInWishlist())} >Wishlisted</button>   
+            }
 
             let buyButton;
             if (game.cost === 0) {
@@ -83,7 +118,7 @@ class GamePage extends React.Component {
 
                     </div>
                     <div id="queue-bar">
-                        <button onClick={this.handleWishlistButton} >Add to your wishlist</button>
+                        {wishlistButton}
                     </div>
 
                     <h2>{buyButton[0]} {game.title}</h2>

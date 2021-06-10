@@ -34,6 +34,7 @@ class User < ApplicationRecord
             game_relations.each do |relation|
                 if game['id'] == relation['game_id']
                     game['owned'] = relation['owned']
+                    game['relation_id'] = relation['id']
                     storage[relation['id']] = game
                     break
                 end
@@ -43,13 +44,6 @@ class User < ApplicationRecord
         return storage
         
     end
-
-    # has_many :products_with_status, -> {
-    #     joins(:products_tests).select("DISTINCT products.*, products_tests.status")
-    #     },
-    #     through: :products_tests,
-    #     class_name: "Product",
-    #     source: :product
     
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
