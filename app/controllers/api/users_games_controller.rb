@@ -12,6 +12,9 @@ class Api::UsersGamesController < ApplicationController
             game = Game.find_by(id: @relation['game_id']).as_json
             game['owned'] = @relation['owned']
             game['relation_id'] = @relation['id']
+            p game
+            game['images'] = game['images_url'].split('<SEPA>')
+            game.delete('image_url')
             render json: game
         else
             render json: @relation.errors.full_messages, status: 401

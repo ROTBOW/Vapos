@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchRelations: userId => dispatch(fetchRelations(userId)),
-        removeRelations: relationId => dispatch(destroyRelation(relationId))
+        removeRelation: relationId => dispatch(destroyRelation(relationId))
     }
 }
 

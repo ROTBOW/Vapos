@@ -1,0 +1,87 @@
+
+
+#wishlist {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+        margin-top: 45px;
+        margin-bottom: 25px;
+        font-size: 26px;
+        color: rgb(211, 211, 211);
+    }
+
+    li {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        width: 800px;
+        padding-left: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        background: #364352;
+        border-radius: 3px;
+
+        div {
+            display: flex;
+            flex-direction: row-reverse;
+
+            > a {
+                color: rgb(204, 204, 204);
+                margin-left: 10px;
+                font-size: large;
+                text-decoration: none;
+            }
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding-right: 15px;
+            
+
+            > button {
+                margin-top: 30px;
+                padding: 5px;
+                background: rgb(96, 160, 32);
+                color: #d2efa9;
+                font-size: 14px;
+                border: none;
+                border-radius: 2px;
+                width: 150px;
+                cursor: pointer;
+    
+                &:hover {
+                    background: rgb(107, 179, 35);
+                    color: #e2eed1;
+                }
+        
+            }
+
+            p {
+                color: rgb(129, 129, 129);
+                font-size: smaller;
+
+                button {
+                    border: none;
+                    background: transparent;
+                    text-decoration: underline;
+                    padding: 0;
+                    padding-left: 2px;
+                    padding-right: 2px;
+                    color: rgb(129, 129, 129);
+
+                    &:hover {
+                        color: rgb(209, 209, 209);
+                    }
+                }
+            }
+        }
+
+    }
+
+}
