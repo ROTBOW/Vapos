@@ -22,8 +22,7 @@ class StoreHomePage extends React.Component {
             <main id="store-main">
 
                 <div className="store-left-wing">
-                    <h1>welcome to the store page! this is the left wing</h1>
-                    <p>this will be the large list of links</p>
+
                 </div>
 
 
