@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_04_211811) do
+ActiveRecord::Schema.define(version: 2021_06_10_204004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "game_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "game_id"], name: "index_cart_items_on_user_id_and_game_id", unique: true
+  end
 
   create_table "games", force: :cascade do |t|
     t.string "title", null: false

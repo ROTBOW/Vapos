@@ -8,11 +8,10 @@ class Api::UsersGamesController < ApplicationController
     
     def create
         @relation = UsersGame.new(usersgames_params)
-        if @relation.save!
+        if @relation.save
             game = Game.find_by(id: @relation['game_id']).as_json
             game['owned'] = @relation['owned']
             game['relation_id'] = @relation['id']
-            p game
             game['images'] = game['images_url'].split('<SEPA>')
             game.delete('image_url')
             render json: game

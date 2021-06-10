@@ -21,4 +21,12 @@ class Game < ApplicationRecord
     has_many :owners,
         through: :users_games,
         source: :owner
+
+    has_many :cart_items,
+        foreign_key: :game_id,
+        class_name: :CartItem
+
+    has_many :cart_owners,
+        through: :cart_items,
+        source: :user
 end

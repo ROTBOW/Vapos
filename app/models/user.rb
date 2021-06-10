@@ -17,14 +17,24 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
     attr_reader :password
 
+    
+    
     has_many :users_games,
-        foreign_key: :user_id,
-        class_name: "UsersGame"
-
+    foreign_key: :user_id,
+    class_name: "UsersGame"
+    
     has_many :games,
-        through: :users_games,
-        source: :game
+    through: :users_games,
+    source: :game
 
+    has_many :cart_items,
+        foreign_key: :user_id,
+        class_name: :CartItem
+
+    has_many :cart,
+        through: :cart_items,
+        source: :game
+    
     def games_with_status # O(n^2) where n is the amount of games owned, haha crap thats not good
         listed_games = games.as_json
         game_relations = users_games.as_json
@@ -36,6 +46,27 @@ class User < ApplicationRecord
             game_relations.each do |relation|
                 if game['id'] == relation['game_id']
                     game['owned'] = relation['owned']
+                    game['relation_id'] = relation['id']
+                    storage[relation['id']] = game
+                    break
+                end
+            end
+        end
+
+        return storage
+        
+    end
+
+    def cart_with_relation
+        listed_games = cart.as_json
+        game_relations = cart_items.as_json
+        storage = {}
+
+        listed_games.each do |game|
+            game['images'] = game['images_url'].split('<SEPA>')
+            game.delete('images_url')
+            game_relations.each do |relation|
+                if game['id'] == relation['game_id']
                     game['relation_id'] = relation['id']
                     storage[relation['id']] = game
                     break
