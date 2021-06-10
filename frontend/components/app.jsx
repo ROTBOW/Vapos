@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Link, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import LoginFormContaniner from './session/login_form_container'
 import SignUpFormContainer from './users/signup_form_container';
@@ -8,11 +8,12 @@ import { ProtectedRoute, AuthRoute } from '../util/route_utils';
 
 import StoreHomePageContainer from './games/store_home_page_container';
 import GamePageContainer from './games/game_show_container';
+import wishlistContainer from './wishlist/wishlist_container';
 
 
 
 // ProtectedRoute means you have to be logged on to see it
-// AuthRoute is the opposite
+// AuthRoute means you have to be logged off to see it
 
 class App extends React.Component {
 
@@ -24,6 +25,7 @@ class App extends React.Component {
                     <Switch>
                         <AuthRoute path='/login' component={LoginFormContaniner}/>
                         <AuthRoute path='/user/new' component={SignUpFormContainer}/>
+                        <ProtectedRoute path='/wishlist' component={wishlistContainer}/>
                         <Route path='/games/:gameId' component={GamePageContainer}/>
                         <Route path='/' component={StoreHomePageContainer}/>
                         <Redirect to='/' />

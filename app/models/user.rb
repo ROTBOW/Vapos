@@ -31,6 +31,8 @@ class User < ApplicationRecord
         storage = {}
 
         listed_games.each do |game|
+            game['images'] = game['images_url'].split('<SEPA>')
+            game.delete('images_url')
             game_relations.each do |relation|
                 if game['id'] == relation['game_id']
                     game['owned'] = relation['owned']

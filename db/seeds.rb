@@ -9,7 +9,7 @@
 User.delete_all
 
 admin = User.create({username: 'admin', password: 'pinky', email: 'thisIsFakeBro@roads.com'})
-demo = User.create({username: 'demo', password: 'demoboi55', email: 'thisIsFakeDemoboi@roads.com'})
+demo = User.create({username: 'Demo User', password: 'demoboi55', email: 'thisIsFakeDemoboi@roads.com'})
 
 
 
