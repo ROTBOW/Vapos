@@ -10,7 +10,7 @@ class LoginForm extends React.Component {
                 password: '',
         }
         this.demoUser = {
-            username: 'demo',
+            username: 'Demo User',
             password: 'demoboi55',
         }
 
