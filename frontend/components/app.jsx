@@ -9,6 +9,7 @@ import { ProtectedRoute, AuthRoute } from '../util/route_utils';
 import StoreHomePageContainer from './games/store_home_page_container';
 import GamePageContainer from './games/game_show_container';
 import wishlistContainer from './wishlist/wishlist_container';
+import CartContainer from './cart/cart_container';
 
 
 
@@ -26,6 +27,7 @@ class App extends React.Component {
                         <AuthRoute path='/login' component={LoginFormContaniner}/>
                         <AuthRoute path='/user/new' component={SignUpFormContainer}/>
                         <ProtectedRoute path='/wishlist' component={wishlistContainer}/>
+                        <ProtectedRoute path='/cart' component={CartContainer}/>
                         <Route path='/games/:gameId' component={GamePageContainer}/>
                         <Route path='/' component={StoreHomePageContainer}/>
                         <Redirect to='/' />

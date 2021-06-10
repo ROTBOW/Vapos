@@ -22,11 +22,14 @@ class NavBar extends React.Component {
         let buttons;
         
         if (!this.props.currentUser) {
-            buttons = [
-            <Link to='/login' key='1' id="login-link">login</Link>
-            ]
+            buttons = <div className='login-div'><Link to='/login' id="login-link">login</Link></div>
         } else {
-            buttons = <button onClick={this.props.sendLogout} >Log Out</button>;
+            buttons = (
+                <div className='logOut-div'>
+                    <button onClick={this.props.sendLogout} key='1'>Log Out</button>
+                    <Link to="/cart">Your Cart</Link>
+                </div>
+            );
         }
 
         let storeDrop;

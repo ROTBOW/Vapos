@@ -38,7 +38,7 @@ export const createCartItem = relation => dispatch => {
         .then(items => dispatch(receiveCartItem(items)))
 }
 
-export const removeCartItems = relationId => dispatch => {
+export const destroyCartItem = relationId => dispatch => {
     return CartUtil.removeCart(relationId)
         .then(() => dispatch(removeCartItem(relationId)))
 }

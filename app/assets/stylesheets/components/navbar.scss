@@ -49,6 +49,33 @@
         height: 80%;
     }
 
+    .logOut-div {
+        display: flex;
+        flex-direction: column;
+
+        button {
+            border: none;
+            background: transparent;
+            text-decoration: underline;
+            color: $text-color;
+            
+            &:hover {
+                text-decoration: none;
+                color: $text-color-hover;
+            }
+        }
+
+        a {
+            margin-top: 5px;
+            text-decoration: none;
+            color: $text-color;
+
+            &:hover {
+                color: $text-color-hover;
+            }
+        }
+    }
+
     #login-link {
         background-color: $navbar-color;
         color: $text-color;
