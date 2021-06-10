@@ -20,7 +20,7 @@
     ul li, ul a {
         list-style: none;
         text-decoration: none;
-        background-color: $navbar-color;
+        background-color: transparent;
         color: $text-color;
         padding-left: 10px;
         margin-right: 10px;
@@ -59,4 +59,31 @@
         color: $text-color-hover;
     }
 
+    .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 165px;
+        height: auto;
+    
+        background: rgba(37, 37, 37, 0.99);
+        border-radius: 1px;
+
+    
+        li, a {
+            background: transparent;
+            margin-top: 4px;
+            margin-bottom: 3px;
+            padding-left: 0;
+            font-size: 14px;
+
+        }
+
+        li {
+            margin-left: 5px;
+        }
+    
+    }
+
 }
+

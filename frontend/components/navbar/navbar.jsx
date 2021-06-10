@@ -3,6 +3,14 @@ import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
 
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            storeDropdown: false
+        }
+    }
+
     componentDidMount(){
         let tempState = store.getState()
         let tempUser = tempState['sessionUser']
@@ -20,6 +28,20 @@ class NavBar extends React.Component {
         } else {
             buttons = <button onClick={this.props.sendLogout} >Log Out</button>;
         }
+
+        let storeDrop;
+        if (this.state.storeDropdown) {
+            storeDrop = <ul className="dropdown-menu">
+                    <li>FEATURED</li>
+                    <li>DISCOVERY QUEUE</li>
+                    <li><Link to="/wishlist">WISHLIST</Link></li>
+                    <li>POINT SHOP</li>
+                    <li>NEWS</li>
+                    <li>STATS</li>
+            </ul>
+        } else {
+            storeDrop = <></>
+        }
         
 
         return (
@@ -30,7 +52,11 @@ class NavBar extends React.Component {
 
                     <ul>
 
-                        <li><Link to='/'>STORE</Link></li>
+                        <li
+                            onMouseEnter={e => this.setState({storeDropdown: true})}
+                            onMouseLeave={e => this.setState({storeDropdown: false})}
+                        ><Link to='/'>STORE</Link>{storeDrop}</li>
+
                         <li>COMMUNITY</li>
                         <li>ABOUT</li>
                         <li>SUPPORT</li>
