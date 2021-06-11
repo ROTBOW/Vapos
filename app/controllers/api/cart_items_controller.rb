@@ -11,6 +11,8 @@ class Api::CartItemsController < ApplicationController
         if relation.save!
             game = Game.find_by(id: relation['game_id']).as_json
             game['relation_id'] = relation['id']
+            game['images'] = game['images_url'].split('<SEPA>')
+            game.delete('images_url')
             render json: game
         end
     end

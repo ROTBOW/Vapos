@@ -18,12 +18,21 @@ class Wishlist extends React.Component {
         }
     }
     
-    handleBuyButton(e){
-        e.preventDefault();
-        if (!!this.props.currentUser) {
-            console.log('this doesn\'t do anything yet but it will');
-        } else {
-            this.props.history.replace('/login');
+    handleBuyButton(gameId, relationId){
+        return e => {
+            e.preventDefault();
+            if (!!this.props.currentUser) {
+                this.props.addToCart({
+                    relation: {
+                        user_id: this.props.currentUser.id,
+                        game_id: gameId
+                    }
+                })
+                this.props.removeRelation(relationId);
+                this.props.history.replace('/cart');
+            } else {
+                this.props.history.replace('/login');
+            }
         }
     }
 
@@ -58,7 +67,7 @@ class Wishlist extends React.Component {
                     </div>
 
                     <article>
-                        <button onClick={this.handleBuyButton} >Add to cart</button>
+                        <button onClick={this.handleBuyButton(game.id, game.relation_id)} >Add to cart</button>
                         <p>Added on {date}(<button onClick={this.handleRemoveButton(game.relation_id)}>remove</button>)</p>
                     </article>
 

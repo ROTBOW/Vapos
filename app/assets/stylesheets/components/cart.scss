@@ -1,0 +1,104 @@
+.cart{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        font-size: 26px;
+        color: rgb(211, 211, 211);
+        margin-bottom: 40px;
+    }
+
+    ul {
+        // background: blue;
+        width: 600px;
+    }
+
+    ul li {
+        display: flex;
+        justify-content: space-between;
+        background: #16202d;
+        color: rgb(211, 211, 211);
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 20px;
+
+        div {
+            display: flex;
+        }
+
+        h2 a {
+            margin-left: 15px;
+            color: rgb(211, 211, 211);
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+                color: rgb(149, 149, 149);
+            }
+        }
+
+        button {
+            background: transparent;
+            border: none;
+            text-decoration: underline;
+            color: rgb(129, 129, 129);
+            font-size: 12px;
+            
+            &:hover {
+                text-decoration: none;
+                color: rgb(149, 149, 149);
+                cursor: pointer;
+                
+            }
+        }
+
+    }
+
+    > div {
+        display: flex;
+        justify-content: space-between;
+        width: 600px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 4px;
+        padding-right: 4px;
+        color: rgb(139, 139, 139);
+        background: rgb(44, 44, 44);
+        border-radius: 5px;
+    }
+
+    > section {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        width: 600px;
+        padding-left: 4px;
+        padding-right: 4px;
+        padding-bottom: 5px;
+        background: rgb(44, 44, 44);
+        border-radius: 5px;
+        bottom: 5px;
+
+        button {
+            margin-right: 8px;
+            padding: 5px;
+            background: rgb(96, 160, 32);
+            color: #d2efa9;
+            font-size: 14px;
+            border: none;
+            border-radius: 2px;
+            width: 150px;
+            cursor: pointer;
+
+            &:hover {
+                background: rgb(107, 179, 35);
+                color: #e2eed1;
+            }
+    
+        }
+    }
+}

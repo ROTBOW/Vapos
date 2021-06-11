@@ -13,6 +13,7 @@ class GamePage extends React.Component {
         this.handleWishlistButton = this.handleWishlistButton.bind(this)
         this.removeWishlistButton = this.removeWishlistButton.bind(this)
         this.findMeInWishlist = this.findMeInWishlist.bind(this)
+        this.cartIncludesMe = this.cartIncludesMe.bind(this)
     }
 
     componentDidMount() {
@@ -20,6 +21,7 @@ class GamePage extends React.Component {
 
         if (!!this.props.currentUser) {
             this.props.fetchRelations(this.props.currentUser.id)
+            this.props.fetchCart(this.props.currentUser.id)
         }
     }
 
@@ -27,7 +29,13 @@ class GamePage extends React.Component {
     handleBuyButton(e){
         e.preventDefault();
         if (!!this.props.currentUser) {
-            console.log('this doesn\'t do anything yet but it will');
+            this.props.addToCart({
+                relation: {
+                    user_id: this.props.currentUser.id,
+                    game_id: this.props.game.id
+                }
+            })
+            this.props.history.replace('/cart')
         } else {
             this.props.history.replace('/login');
         }
@@ -43,7 +51,6 @@ class GamePage extends React.Component {
                     owned: false
                 }
             })
-            this.forceUpdate();
         } else {
             this.props.history.replace('/login');
         }
@@ -53,7 +60,6 @@ class GamePage extends React.Component {
         return e => {e.preventDefault();
             if (!!this.props.currentUser) {
                 this.props.removeFromWishlist(relationId)
-                this.forceUpdate();
             } else {
                 this.props.history.replace('/login');
             }
@@ -68,6 +74,14 @@ class GamePage extends React.Component {
                 return wishlist[relation].relation_id
             }
         }
+    }
+
+    cartIncludesMe(game) {
+        for (let id in this.props.cart){
+            let cartGame = this.props.cart[id];
+            if (cartGame.title === game.title) return true;
+        }
+        return false;
     }
 
 
@@ -87,16 +101,23 @@ class GamePage extends React.Component {
 
             let buyButton;
             if (game.cost === 0) {
-                buyButton = [
-                    'Play',
-                    'Free',
-                    'Add To Library'
-                ]
+                buyButton = [<h2 key='1'>play {game.title}</h2>,
+                    <label key='2'>Free
+                        <button onClick={this.handleBuyButton}>Add To Library</button>
+                    </label>]
             } else {
+                buyButton = [<h2 key='1'>Buy {game.title}</h2>,
+                    <label key='2'>${game.cost}
+                        <button onClick={this.handleBuyButton}>Add To Cart</button>
+                    </label>]
+            }
+
+            if (this.cartIncludesMe(game)) {
                 buyButton = [
-                    'Buy',
-                    `$${game.cost}`,
-                    'Add To Cart'
+                    <h2 key='1'>Buy {game.title}</h2>,
+                    <label key='2'>${game.cost}
+                        <button onClick={e => this.props.history.replace('/cart')} >In Cart!</button>
+                    </label>
                 ]
             }
 
@@ -121,10 +142,11 @@ class GamePage extends React.Component {
                         {wishlistButton}
                     </div>
 
-                    <h2>{buyButton[0]} {game.title}</h2>
+                    {/* <h2>{buyButton[0]} {game.title}</h2>
                     <label>{buyButton[1]}
                         <button onClick={this.handleBuyButton}>{buyButton[2]}</button>
-                    </label>
+                    </label> */}
+                    {buyButton}
 
                 </div>
             )

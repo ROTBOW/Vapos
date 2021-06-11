@@ -69,11 +69,6 @@ demo_game_2 = UsersGame.create({
     game_id: war_thunder.id,
     owned: true
 })
-demo_game_3 = UsersGame.create({
-    user_id: demo.id,
-    game_id: black_desert.id,
-    owned: true
-})
 
 
 
@@ -83,4 +78,9 @@ CartItem.delete_all
 demo_cart_item_1 = CartItem.create!({
     user_id: demo.id,
     game_id: supcom_fa.id
+})
+
+demo_cart_2 = CartItem.create({
+    user_id: demo.id,
+    game_id: black_desert.id
 })
