@@ -1,24 +1,3 @@
-# README
+# README ![Vapos-logo](https://github.com/ROTBOW/Vapos/blob/main/app/assets/images/ui/logo_vapos.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Welcome to [Vapos](https://vapos.herokuapp.com/#/), the Steam clone. Vapos is a ecomeroce site, where the main product is video games. 
