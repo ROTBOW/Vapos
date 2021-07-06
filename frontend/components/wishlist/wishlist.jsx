@@ -87,6 +87,7 @@ class Wishlist extends React.Component {
             return ( 
                 <div id="wishlist">
                     <h1>YOUR WISHLIST IS EMPTY</h1>
+                    <Link to="/" className="back-link">Discover Games</Link>
                 </div>
             )
         }
