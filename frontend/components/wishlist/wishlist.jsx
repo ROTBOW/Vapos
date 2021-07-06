@@ -84,7 +84,11 @@ class Wishlist extends React.Component {
                 </div>
             )
         } else {
-            return <div>crap</div>
+            return ( 
+                <div id="wishlist">
+                    <h1>YOUR WISHLIST IS EMPTY</h1>
+                </div>
+            )
         }
     }
 }
