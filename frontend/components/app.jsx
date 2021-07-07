@@ -10,6 +10,7 @@ import StoreHomePageContainer from './games/store_home_page_container';
 import GamePageContainer from './games/game_show_container';
 import wishlistContainer from './wishlist/wishlist_container';
 import CartContainer from './cart/cart_container';
+import ProfileContainer from './profile/profile_container';
 
 
 
@@ -28,6 +29,7 @@ class App extends React.Component {
                         <AuthRoute path='/user/new' component={SignUpFormContainer}/>
                         <ProtectedRoute path='/wishlist' component={wishlistContainer}/>
                         <ProtectedRoute path='/cart' component={CartContainer}/>
+                        <ProtectedRoute path='/profile' component={ProfileContainer}/>
                         <Route path='/games/:gameId' component={GamePageContainer}/>
                         <Route path='/' component={StoreHomePageContainer}/>
                         <Redirect to='/' />

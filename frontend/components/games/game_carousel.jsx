@@ -21,7 +21,7 @@ class GameCarousel extends React.Component {
         this.props.fetchAllGames()
         this.timer = setInterval(
             this.handleButton('right'),
-            8000
+            7000
         )
     }
 

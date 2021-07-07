@@ -10,12 +10,22 @@ class NavBar extends React.Component {
             storeDropdown: false,
             aboutDropdown: false
         }
+
+        this.profileLink = this.profileLink.bind(this)
     }
 
     componentDidMount(){
         let tempState = store.getState()
         let tempUser = tempState['sessionUser']
         this.setState({ login: !tempUser })
+    }
+
+    profileLink() {
+        if (this.props.currentUser) {
+            return (
+                <li><Link to="/profile">{this.props.currentUser.username.toUpperCase()}</Link></li>
+            )
+        }
     }
 
 
@@ -28,12 +38,8 @@ class NavBar extends React.Component {
             buttons = (
 
                 <div className='logOut-div'>
-                    <div>
-                        <Link to="#">{this.props.currentUser.username}</Link>
-                        <button onClick={this.props.sendLogout} key='1'>Log Out</button>
-                    </div>
+                    <button onClick={this.props.sendLogout} key='1'>Log Out</button>
                     <Link to="/cart">Your Cart</Link>
-
                 </div>
 
             );
@@ -81,6 +87,9 @@ class NavBar extends React.Component {
                             onMouseLeave={e => this.setState({aboutDropdown: false})}
                         >ABOUT{aboutDrop}</li>
                         <li>SUPPORT</li>
+                        {
+                            this.profileLink()
+                        }
                 
                     </ul>
                 </div>
