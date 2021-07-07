@@ -123,7 +123,7 @@ class GamePage extends React.Component {
 
             return (
                 <div className="game-show-page">
-                    <StoreBar/>
+                    <StoreBar classToAdd="store-bar-game-show-page"/>
 
                     <h1>{game.title}</h1>
 

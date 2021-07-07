@@ -7,7 +7,8 @@ class NavBar extends React.Component {
         super(props)
 
         this.state = {
-            storeDropdown: false
+            storeDropdown: false,
+            aboutDropdown: false
         }
     }
 
@@ -25,10 +26,16 @@ class NavBar extends React.Component {
             buttons = <div className='login-div'><Link to='/login' id="login-link">login</Link></div>
         } else {
             buttons = (
+
                 <div className='logOut-div'>
-                    <button onClick={this.props.sendLogout} key='1'>Log Out</button>
+                    <div>
+                        <Link to="#">{this.props.currentUser.username}</Link>
+                        <button onClick={this.props.sendLogout} key='1'>Log Out</button>
+                    </div>
                     <Link to="/cart">Your Cart</Link>
+
                 </div>
+
             );
         }
 
@@ -44,6 +51,14 @@ class NavBar extends React.Component {
             </ul>
         } else {
             storeDrop = <></>
+        }
+
+        let aboutDrop;
+        if (this.state.aboutDropdown) {
+            aboutDrop = <ul className="dropdown-menu">
+                <li><a href="https://github.com/ROTBOW/Vapos">GITHUB</a></li>
+                <li><a href="https://www.linkedin.com/in/josiah-leon/">LINKEDIN(Thats me!)</a></li>
+            </ul>
         }
         
 
@@ -61,7 +76,10 @@ class NavBar extends React.Component {
                         ><Link to='/'>STORE</Link>{storeDrop}</li>
 
                         <li>COMMUNITY</li>
-                        <li>ABOUT</li>
+                        <li
+                            onMouseEnter={e => this.setState({aboutDropdown: true})}
+                            onMouseLeave={e => this.setState({aboutDropdown: false})}
+                        >ABOUT{aboutDrop}</li>
                         <li>SUPPORT</li>
                 
                     </ul>

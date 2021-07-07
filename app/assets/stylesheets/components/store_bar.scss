@@ -6,9 +6,7 @@
     height: 30px;
     justify-content: space-between;
     align-items: center;
-    margin-left: 20%;
-    margin-top: 30px;
-    margin-bottom: 60px;
+
 
     ul {
         display: flex;
@@ -28,4 +26,21 @@
             }
         }
     }
+
+    input {
+        margin-right: 10px;
+    }
+
+}
+
+.store-bar-store {
+    margin-left: 20%;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.store-bar-game-show-page {
+    margin-left: 18%;
+    margin-top: 25px;
+    margin-bottom: 50px;
 }

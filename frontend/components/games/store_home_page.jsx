@@ -28,7 +28,7 @@ class StoreHomePage extends React.Component {
 
 
                 <div className="store-right-wing">
-                    <StoreBar/>
+                    <StoreBar classToAdd="store-bar-store"/>
                     
                     {/* <h1>this is the right wing</h1> */}
 

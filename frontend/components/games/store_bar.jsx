@@ -4,7 +4,7 @@ class StoreBar extends React.Component {
 
     render() {
         return (
-            <div id="store-bar">
+            <div id="store-bar" className={this.props.classToAdd}>
                 <ul>
 
                     <li>Your Store</li>
