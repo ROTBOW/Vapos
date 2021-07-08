@@ -53,7 +53,7 @@ class GameCarousel extends React.Component {
             let numForKey = arr.length;
             while (arr.length < 4) {
                 arr.push(<img
-                            src="https://plchldr.co/i/162x69?text=crap"
+                            src="https://plchldr.co/i/162x69?text=No Image Found"
                             alt="game_placeholder_bro"
                             key={numForKey+1}
                             width="162"
