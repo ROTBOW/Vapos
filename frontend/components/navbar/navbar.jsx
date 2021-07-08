@@ -50,7 +50,7 @@ class NavBar extends React.Component {
         return (
             <div className='navbar'>
                 
-                <div>
+                <div id="navbar-left-wing">
                     <Link to='/'><img src={window.vaposLogo} alt='Vapos logo'/></Link>
 
                     <ul>
