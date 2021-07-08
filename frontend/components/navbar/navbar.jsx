@@ -35,12 +35,12 @@ class NavBar extends React.Component {
         let storeDrop;
         if (this.state.storeDropdown) {
             storeDrop = <ul className="dropdown-menu">
-                    <li>FEATURED</li>
-                    <li>DISCOVERY QUEUE</li>
+                    <li className="disabled">FEATURED</li>
+                    <li className="disabled">DISCOVERY QUEUE</li>
                     <li><Link to="/wishlist">WISHLIST</Link></li>
-                    <li>POINT SHOP</li>
-                    <li>NEWS</li>
-                    <li>STATS</li>
+                    <li className="disabled">POINT SHOP</li>
+                    <li className="disabled">NEWS</li>
+                    <li className="disabled">STATS</li>
             </ul>
         } else {
             storeDrop = <></>
@@ -60,9 +60,9 @@ class NavBar extends React.Component {
                             onMouseLeave={e => this.setState({storeDropdown: false})}
                         ><Link to='/'>STORE</Link>{storeDrop}</li>
 
-                        <li>COMMUNITY</li>
+                        <li className="disabled">COMMUNITY</li>
                         <li>ABOUT</li>
-                        <li>SUPPORT</li>
+                        <li className="disabled">SUPPORT</li>
                 
                     </ul>
                 </div>
