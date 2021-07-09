@@ -35,7 +35,7 @@ class User < ApplicationRecord
         through: :cart_items,
         source: :game
     
-    def games_with_status # O(n^2) where n is the amount of games owned, haha crap thats not good
+    def games_with_status # O(n^2) where n is the amount of games owned, haha thats not good
         listed_games = games.as_json
         game_relations = users_games.as_json
         storage = {}

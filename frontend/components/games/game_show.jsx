@@ -88,7 +88,7 @@ class GamePage extends React.Component {
     render(){
         
         if (this.props.game === undefined) {
-            return <div>crap, im broken again</div>
+            return <div>darn, im broken again</div>
         } else {
             let game = this.props.game;
             

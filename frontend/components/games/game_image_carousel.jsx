@@ -36,7 +36,7 @@ class GameImageCarousel extends React.Component {
     addFive(arr) {
         for (let i = 0; i < 5; i++ ) {
             let numForKey = arr.length;
-            arr.push(<img src="https://plchldr.co/i/162x69?text=crap" alt="game_placeholder_bro" key={numForKey+1}/>)
+            arr.push(<img src="https://plchldr.co/i/162x69?text=Image Not Found" alt="game_placeholder_bro" key={numForKey+1}/>)
             numForKey++
         }
 

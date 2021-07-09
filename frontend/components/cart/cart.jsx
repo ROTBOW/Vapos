@@ -80,7 +80,7 @@ class Cart extends React.Component {
             )
             
         } else {
-            return (<div>crap</div>)
+            return (<div>Not Good</div>)
         }
     }
 }

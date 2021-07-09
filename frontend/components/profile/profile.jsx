@@ -24,7 +24,7 @@ class Profile extends React.Component {
                             <img src="https://plchldr.co/i/165x165"></img>
                             <div>
                                 <h2>{this.props.currentUser.username}</h2>
-                                <article> this will be an desc area, idk how I'll fill it </article>
+                                <article> this will be an desc area, might leave this blank </article>
                             </div>
 
                             <aside>
@@ -33,7 +33,7 @@ class Profile extends React.Component {
 
                         </div>
 
-                        <div>this is also crap</div>
+                        <div>this is also an item</div>
 
                     </div>
 
