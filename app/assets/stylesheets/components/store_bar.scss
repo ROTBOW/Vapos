@@ -23,12 +23,14 @@
 
             &:hover {
                 background: linear-gradient( to left, transparent 15%, #4661da 60%);
+                cursor: not-allowed;
             }
         }
     }
 
-    input {
+    input { // hiding it rn, but I'll add it again soon.
         margin-right: 10px;
+        opacity: 0;
     }
 
 }
