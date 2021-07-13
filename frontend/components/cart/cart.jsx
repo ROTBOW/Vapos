@@ -58,8 +58,8 @@ class Cart extends React.Component {
             }
 
             return (
-                <div>
-                    <StoreBar />
+                <div className="cart-container">
+                    <StoreBar classToAdd="store-bar-cart"/>
                     <div className="cart">
                         <h1>YOUR SHOPPING CART</h1>
 
