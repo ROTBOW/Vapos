@@ -21,8 +21,8 @@ class Profile extends React.Component {
 
     render(){
         if (this.props.games === undefined && !isEmpty(this.props.userInfo)) {
-            let userInfo = this.props.userInfo;
-
+            let userInfo = this.props.userInfo[this.props.currentUser.id];
+            console.log(userInfo);
             return (
                 <div className="background-shape" >
 
@@ -34,7 +34,7 @@ class Profile extends React.Component {
                                 <BsPersonFill className="profile-icon"/>
                                 <div>
                                     <h2>{this.props.currentUser.username}</h2>
-                                    <article> this will be an desc area, might leave this blank </article>
+                                    <article> {userInfo.desc} </article>
                                 </div>
                             </div>
 
