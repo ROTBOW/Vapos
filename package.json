@@ -7,7 +7,7 @@
     "start": "webpack --watch --mode=development",
     "postinstall": "webpack"
   },
-  "engines": { 
+  "engines": {
     "node": "10.13.0",
     "npm": "6.4.1"
   },
@@ -22,6 +22,7 @@
     "file-loader": "^6.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-transition-group": "^1.2.1",

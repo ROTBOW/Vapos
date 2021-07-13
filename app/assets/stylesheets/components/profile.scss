@@ -1,17 +1,40 @@
+.background-shape {
+    display: flex;
+    justify-content: center;
+}
+
 #profile-page {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgb(60, 60, 60);
+    width: 75%;
+    min-width: 500px;
 
     .profile-header{
         display: flex;
         margin-bottom: 5px;
         margin-top: 20px;
-        background: grey;
+        // background: grey;
+        justify-content: space-between;
+        width: 100%;
+
+        > :first-child {
+            display: flex;
+        }
 
         img {
            margin-left: 20px; 
            margin-right: 20px;
+        }
+
+        .profile-icon {
+            height: 165px;
+            width: 165px;
+            border: solid 3px rgb(30, 30, 30);
+            // border-radius: 25%;
+            margin-right: 8px;
+            margin-left: 25px;
         }
 
         > div {
@@ -26,6 +49,73 @@
         aside {
             height: 150px;
             width: 150px;
+            margin-right: 75px;
+
+            h2 {
+                color: white;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                font-size: 16px;
+                display: flex;
+            }
+
+            .circle {
+                background-color: transparent;
+                border: 1.5px solid red;
+                height: 13px;
+                width: 13px;
+                border-radius: 50%;
+                left: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: 3px;
+
+                p {
+                    font-size: 13px;
+                }
+            }
+
+            > div {
+                background-color: rgba(30, 30, 30, 0.8);
+                display: flex;
+                width: 150px;
+                padding: 5px;
+                font-size: 14px;
+                border-radius: 4px;
+                color: white;
+                margin-bottom: 16px;
+                
+                svg {
+                    width: 35px;
+                    height: 35px;
+                    padding: 2px;
+                    margin-right: 6px;
+                    border: solid 2px rgb(30, 30, 30);
+                    border-radius: 25%;
+                }
+            }
+
+            a {
+                margin-top: 10px;
+                margin-right: 8px;
+                padding: 7px;
+                background: #202d47;
+                color: rgb(180, 180, 180);
+                font-size: 14px;
+                border: none;
+                border-radius: 2px;
+                width: 150px;
+                cursor: pointer;
+                text-decoration: none;
+                transition: background 250ms, color 250ms;
+    
+                &:hover {
+                    background: #2b3c5f;
+                    color: #ffffff;
+                }
+        
+            }
         }
     }
 }

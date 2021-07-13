@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { BsPersonFill, BsTrophy } from "react-icons/bs";
 
 
 class Profile extends React.Component {
@@ -21,19 +23,24 @@ class Profile extends React.Component {
                     <div id="profile-page">
 
                         <div className="profile-header">
-                            <img src="https://plchldr.co/i/165x165"></img>
+                            {/* <img src="https://plchldr.co/i/165x165"></img> */}
                             <div>
-                                <h2>{this.props.currentUser.username}</h2>
-                                <article> this will be an desc area, might leave this blank </article>
+                                <BsPersonFill className="profile-icon"/>
+                                <div>
+                                    <h2>{this.props.currentUser.username}</h2>
+                                    <article> this will be an desc area, might leave this blank </article>
+                                </div>
                             </div>
 
                             <aside>
-                                
+                                <h2>LEVEL <div className="circle"><p>0</p></div></h2>
+                                <div> <BsTrophy/> Use Vapos<br/>150 XP</div>
+                                <Link to="#">Edit Profile</Link>
                             </aside>
 
                         </div>
 
-                        <div>this is also an item</div>
+                        <div>this is also an item that goes below the profile header</div>
 
                     </div>
 
