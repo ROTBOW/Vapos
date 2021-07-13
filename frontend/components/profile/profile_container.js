@@ -1,5 +1,6 @@
 import {connect} from "react-redux";
 import { fetchUser } from "../../actions/users_actions";
+import { fetchRelations } from '../../actions/users_games_actions';
 import Profile from "./profile";
 
 
@@ -8,13 +9,14 @@ const mapStateToProps = state => {
     return {
         currentUser: state.sessionUser,
         userInfo: state.entities.users,
-        games: state.games
+        ownedGames: state.entities.library
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchUser: userId => dispatch(fetchUser(userId))
+        fetchUser: userId => dispatch(fetchUser(userId)),
+        fetchRelations: userId => dispatch(fetchRelations(userId)),
     }
 }
 

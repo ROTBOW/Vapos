@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { BsPersonFill, BsTrophy } from "react-icons/bs";
 
-const isEmpty = pojo => {
+const isEmpty = (pojo, returnCount=false) => {
     let count = 0;
     for (let id in pojo) count++;
-    return !(count > 0);
+    return (returnCount) ? count : !(count > 0);
+    // return !(count > 0);
 }
 
 class Profile extends React.Component {
@@ -17,12 +18,16 @@ class Profile extends React.Component {
     componentDidMount(){
         // grabs info about owned games
         this.props.fetchUser(this.props.currentUser.id)
+        this.props.fetchRelations(this.props.currentUser.id)
     }
 
     render(){
-        if (this.props.games === undefined && !isEmpty(this.props.userInfo)) {
+        if (!isEmpty(this.props.userInfo) && !isEmpty(this.props.ownedGames) ) {
             let userInfo = this.props.userInfo[this.props.currentUser.id];
-            console.log(userInfo);
+            let ownedGames = this.props.ownedGames;
+            
+            console.log(isEmpty(ownedGames, true));
+
             return (
                 <div className="background-shape" >
 
@@ -41,6 +46,7 @@ class Profile extends React.Component {
                             <aside>
                                 <h2>LEVEL <div className="circle"><p>0</p></div></h2>
                                 <div> <BsTrophy/> Use Vapos<br/>150 XP</div>
+                                <div>Has {isEmpty(ownedGames, true)} Game in Library</div>
                                 {/* <Link to="#">Edit Profile</Link> */}
                             </aside>
 
