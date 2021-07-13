@@ -46,7 +46,7 @@ class Profile extends React.Component {
                             <aside>
                                 <h2>LEVEL <div className="circle"><p>0</p></div></h2>
                                 <div> <BsTrophy/> Use Vapos<br/>150 XP</div>
-                                <div>Has {isEmpty(ownedGames, true)} Game in Library</div>
+                                <div>Has {isEmpty(ownedGames, true)} Game(s) in Library</div>
                                 {/* <Link to="#">Edit Profile</Link> */}
                             </aside>
 
