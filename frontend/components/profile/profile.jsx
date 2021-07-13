@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { BsPersonFill, BsTrophy } from "react-icons/bs";
 
+const isEmpty = pojo => {
+    let count = 0;
+    for (let id in pojo) count++;
+    return !(count > 0);
+}
 
 class Profile extends React.Component {
 
@@ -11,12 +16,13 @@ class Profile extends React.Component {
 
     componentDidMount(){
         // grabs info about owned games
+        this.props.fetchUser(this.props.currentUser.id)
     }
 
-
     render(){
+        if (this.props.games === undefined && !isEmpty(this.props.userInfo)) {
+            let userInfo = this.props.userInfo;
 
-        if (this.props.games === undefined) {
             return (
                 <div className="background-shape" >
 
@@ -40,7 +46,7 @@ class Profile extends React.Component {
 
                         </div>
 
-                        <div>this is also an item that goes below the profile header</div>
+                        {/* <div>this is also an item that goes below the profile header</div> */}
 
                     </div>
 
