@@ -19,6 +19,7 @@
     ul {
         display: flex;
         justify-content: space-between;
+        min-width: 600px;
 
     }
 
@@ -57,6 +58,7 @@
         align-items: flex-start;
         height: 80%;
         margin-right: 3rem;
+        min-width: 70px;
     }
 
     .logOut-div {
