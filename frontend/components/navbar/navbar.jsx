@@ -31,9 +31,12 @@ class NavBar extends React.Component {
 
     render(){
         let buttons;
+        let shifting;
         
         if (!this.props.currentUser) {
             buttons = <div className='login-div'><Link to='/login' id="login-link">login</Link></div>
+            shifting = <li className="disabled">COMMUNITY</li>
+
         } else {
             buttons = (
 
@@ -43,6 +46,7 @@ class NavBar extends React.Component {
                 </div>
 
             );
+            shifting = <li>LIBRARY</li>
         }
 
         let storeDrop;
@@ -81,7 +85,7 @@ class NavBar extends React.Component {
                             onMouseLeave={e => this.setState({storeDropdown: false})}
                         ><Link to='/'>STORE</Link>{storeDrop}</li>
 
-                        <li className="disabled">COMMUNITY</li>
+                        {shifting}
                         <li
                             onMouseEnter={e => this.setState({aboutDropdown: true})}
                             onMouseLeave={e => this.setState({aboutDropdown: false})}
