@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { BsPersonFill, BsTrophy } from "react-icons/bs";
 
-const isEmpty = (pojo, returnCount=false) => {
+export const isEmpty = (pojo, returnCount=false) => {
     let count = 0;
     for (let id in pojo) count++;
     return (returnCount) ? count : !(count > 0);

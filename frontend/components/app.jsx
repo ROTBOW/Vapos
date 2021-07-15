@@ -11,6 +11,7 @@ import GamePageContainer from './games/game_show_container';
 import wishlistContainer from './wishlist/wishlist_container';
 import CartContainer from './cart/cart_container';
 import ProfileContainer from './profile/profile_container';
+import LibraryContainer from './library/library_container';
 
 
 
@@ -30,6 +31,7 @@ class App extends React.Component {
                         <ProtectedRoute path='/wishlist' component={wishlistContainer}/>
                         <ProtectedRoute path='/cart' component={CartContainer}/>
                         <ProtectedRoute path='/profile' component={ProfileContainer}/>
+                        <ProtectedRoute path='/library' component={LibraryContainer}/>
                         <Route path='/games/:gameId' component={GamePageContainer}/>
                         <Route path='/' component={StoreHomePageContainer}/>
                         <Redirect to='/' />
