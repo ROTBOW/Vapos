@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
     resources :users, only: [:show, :create]
     get '/users/:id/games', to: 'users#games'
+    get '/users/search/:search', to: 'users#search'
     
     resources :games, only: [ :index, :show ]
     get '/games/images/:images_url', to: 'games#images'

@@ -22,6 +22,17 @@ class Api::UsersController < ApplicationController
         render json: @games
     end
 
+    def search
+        users = User.all
+        response = {}
+        users.each do |user|
+            if user.username.downcase.include?(params[:search].downcase)
+                response[user.id] = [user.id, user.username]
+            end
+        end
+        render json: response.to_json
+    end
+
     private
     def user_params
         params.require(:user).permit(:username, :email, :password)

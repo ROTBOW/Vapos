@@ -1,4 +1,5 @@
 import React from 'react';
+import Search from './../search/search_container';
 
 class StoreBar extends React.Component {
 
@@ -16,7 +17,8 @@ class StoreBar extends React.Component {
 
                 </ul>
 
-                <input placeholder="seach - not real" type="text" />
+                {/* <input placeholder="seach - not real" type="text" /> */}
+                <Search/>
 
             </div>
         )

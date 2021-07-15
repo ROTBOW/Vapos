@@ -1,4 +1,5 @@
 import { RECEIVE_ALL_USERS, RECEIVE_USER, REMOVE_USER } from '../actions/users_actions'
+import { RECEIVE_SEARCH } from '../actions/search_actions';
 
 
 
@@ -10,6 +11,9 @@ const UsersReducers = (state = {}, action) => {
 
         case RECEIVE_ALL_USERS:
             return action.users
+
+        case RECEIVE_SEARCH:
+            return action.search;
 
         case RECEIVE_USER:
             nextState[action.user.id] = action.user
