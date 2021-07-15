@@ -16,10 +16,17 @@
         font-size: 19px;
     }
 
+    .navbar-buttons-440min {
+        min-width: 440px;
+    }
+
+    .navbar-buttons-560min {
+        min-width: 560px;
+    }
+
     ul {
         display: flex;
         justify-content: space-between;
-        min-width: 600px;
 
     }
 

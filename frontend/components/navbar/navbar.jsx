@@ -32,14 +32,16 @@ class NavBar extends React.Component {
     render(){
         let buttons;
         let shifting;
+        let minSizeControl;
         
         if (!this.props.currentUser) {
             buttons = <div className='login-div'><Link to='/login' id="login-link">login</Link></div>
             shifting = <li className="disabled">COMMUNITY</li>
-
+            minSizeControl = "navbar-buttons-440min"
+            
         } else {
             buttons = (
-
+                
                 <div className='logOut-div'>
                     <button onClick={this.props.sendLogout} key='1'>Log Out</button>
                     <Link to="/cart">Your Cart</Link>
@@ -47,6 +49,7 @@ class NavBar extends React.Component {
 
             );
             shifting = <li>LIBRARY</li>
+            minSizeControl = "navbar-buttons-560min"
         }
 
         let storeDrop;
@@ -78,7 +81,7 @@ class NavBar extends React.Component {
                 <div id="navbar-left-wing">
                     <Link to='/'><img src={window.vaposLogo} alt='Vapos logo'/></Link>
 
-                    <ul>
+                    <ul className={minSizeControl}>
 
                         <li
                             onMouseEnter={e => this.setState({storeDropdown: true})}
