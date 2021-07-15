@@ -1,0 +1,29 @@
+.library {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    h1 {
+        color: white;
+        font-size: 22px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .library-game-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        li {
+            width: 460px;
+            height: 215px;
+            margin: 5px;
+            box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.61);
+            
+            transition: box-shadow 500ms;
+            &:hover {
+                box-shadow: 0px 0px 40px 0px rgb(100, 100, 100);
+            }
+        }
+    }
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { isEmpty } from './../profile/profile';
+import { Link } from 'react-router-dom';
 
 class Library extends React.Component {
     constructor(props) {
@@ -17,9 +18,26 @@ class Library extends React.Component {
                 <div>here we are has no games</div>
                 )
         } else {
-            console.log(this.props.ownedGames);
+
+            let games = [];
+            for (let id in this.props.ownedGames) {
+                let game = this.props.ownedGames[id];
+                games.push(
+                        <li key={id}>
+                            <Link to={`/games/${game.id}`} >
+                                <img src={game.images[0]}></img>
+                            </Link>
+                        </li>
+                    )
+            }
+
             return (
-                <div>here we are</div>
+                <div className="library">
+                    <h1>{this.props.currentUser.username.toUpperCase()}'S LIBRARY</h1>
+                    <ul className="library-game-grid">
+                        {games}
+                    </ul>
+                </div>
             )
         }
     }
