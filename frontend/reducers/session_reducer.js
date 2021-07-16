@@ -9,7 +9,7 @@ const SessionReducer = (state = initState, action) => {
     
     switch(action.type){
 
-        case RECEIVE_USER:
+        // case RECEIVE_USER:
         case RECEIVE_LOGIN:
             return action.user;
 
