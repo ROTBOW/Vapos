@@ -32,7 +32,7 @@ class Search extends React.Component {
         
         for (let id in this.props.results) {
             let username = this.props.results[id][1]
-            dropdown.push(<li key={id}>{username}</li>)
+            dropdown.push(<li key={id} className="search-items">{username}</li>)
         }
         
 
