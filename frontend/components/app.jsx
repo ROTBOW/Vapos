@@ -30,7 +30,7 @@ class App extends React.Component {
                         <AuthRoute path='/user/new' component={SignUpFormContainer}/>
                         <ProtectedRoute path='/wishlist' component={wishlistContainer}/>
                         <ProtectedRoute path='/cart' component={CartContainer}/>
-                        <ProtectedRoute path='/profile' component={ProfileContainer}/>
+                        <ProtectedRoute path='/profile/:id' component={ProfileContainer}/>
                         <ProtectedRoute path='/library' component={LibraryContainer}/>
                         <Route path='/games/:gameId' component={GamePageContainer}/>
                         <Route path='/' component={StoreHomePageContainer}/>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Search extends React.Component {
     constructor(props){
@@ -32,19 +33,19 @@ class Search extends React.Component {
         
         for (let id in this.props.results) {
             let username = this.props.results[id][1]
-            dropdown.push(<li key={id} className="search-items">{username}</li>)
+            dropdown.push(<li key={id} className="search-items"><Link to={`profile/${id}`}>{username}</Link></li>)
         }
         
 
         if (!this.state.show) {
             return (
-                <div className="search-container">
+                <div id="search-container">
                     <input placeholder="search" type="text" onChange={this.handleChange}/>
                 </div>
             )
         } else {
             return (
-                <div className="search-container">
+                <div id="search-container">
                     <input placeholder="search" type="text" onChange={this.handleChange}/>
                     <ul>
                         {dropdown}

@@ -5,7 +5,7 @@ import Profile from "./profile";
 
 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     return {
         currentUser: state.sessionUser,
         userInfo: state.entities.users,

@@ -23,7 +23,7 @@ class NavBar extends React.Component {
     profileLink() {
         if (this.props.currentUser) {
             return (
-                <li><Link to="/profile">{this.props.currentUser.username.toUpperCase()}</Link></li>
+                <li><Link to={`/profile/${this.props.currentUser.id}`}>{this.props.currentUser.username.toUpperCase()}</Link></li>
             )
         }
     }

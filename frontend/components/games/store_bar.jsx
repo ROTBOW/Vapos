@@ -8,12 +8,12 @@ class StoreBar extends React.Component {
             <div className={`store-bar ${this.props.classToAdd}`}>
                 <ul>
 
-                    <li>Your Store</li>
-                    <li>New & Noteworthy</li>
-                    <li>Categories</li>
-                    <li>Points Shop</li>
-                    <li>News</li>
-                    <li>Labs</li>
+                    <li className="store-bar-items">Your Store</li>
+                    <li className="store-bar-items">New & Noteworthy</li>
+                    <li className="store-bar-items">Categories</li>
+                    <li className="store-bar-items">Points Shop</li>
+                    <li className="store-bar-items">News</li>
+                    <li className="store-bar-items">Labs</li>
 
                 </ul>
 

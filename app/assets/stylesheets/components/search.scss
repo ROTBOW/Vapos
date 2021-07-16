@@ -1,4 +1,4 @@
-.search-container {
+#search-container {
     margin-right: 8px;
 
     ul {
@@ -10,12 +10,19 @@
 
         font-size: 12px;
         text-transform: capitalize;
+        padding-top: 3px;
 
         .search-items {
-            &:hover {
-                background: transparent;
-                color: white;
-                cursor: pointer;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            margin-left: 6px;
+            a {
+                text-decoration: none;
+                color: grey;
+
+                &:hover {
+                    color: white;
+                }
             }
         }
     }

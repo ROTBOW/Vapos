@@ -6,38 +6,24 @@ export const isEmpty = (pojo, returnCount=false) => {
     let count = 0;
     for (let id in pojo) count++;
     return (returnCount) ? count : !(count > 0);
-    // return !(count > 0);
 }
 
 class Profile extends React.Component {
 
     constructor(props){
         super(props);
-
-        let thisUser;
-        if (this.props.user === undefined) {
-            thisUser = this.props.currentUser
-        } else {
-            thisUser = this.props.givenUser;
-        }
-
-        this.state = {
-            currentUser: thisUser
-        }
     }
 
     componentDidMount(){
         // grabs info about owned games
-        this.props.fetchUser(this.state.currentUser.id)
-        this.props.fetchRelations(this.state.currentUser.id)
+        this.props.fetchUser(this.props.match.params.id)
+        this.props.fetchRelations(this.props.match.params.id)
     }
 
     render(){
         if (!isEmpty(this.props.userInfo) && !isEmpty(this.props.ownedGames) ) {
-            let userInfo = this.props.userInfo[this.props.currentUser.id];
+            let userInfo = this.props.userInfo[this.props.match.params.id];
             let ownedGames = this.props.ownedGames;
-            
-            console.log(isEmpty(ownedGames, true));
 
             return (
                 <div className="background-shape" >
@@ -45,11 +31,10 @@ class Profile extends React.Component {
                     <div id="profile-page">
 
                         <div className="profile-header">
-                            {/* <img src="https://plchldr.co/i/165x165"></img> */}
                             <div>
                                 <BsPersonFill className="profile-icon"/>
                                 <div>
-                                    <h2>{this.state.currentUser.username}</h2>
+                                    <h2>{userInfo.username}</h2>
                                     <article> {userInfo.desc} </article>
                                 </div>
                             </div>
