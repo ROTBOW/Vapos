@@ -1,16 +1,11 @@
 import React from 'react';
-import { isEmpty } from './../profile/profile';
-
-const checkSize = arr => {
-
-}
 
 class Search extends React.Component {
     constructor(props){
         super(props)
         this.state = {
             show: false,
-            search: ''
+            search: '<NULL>'
         }
 
         this.handleChange = this.handleChange.bind(this)
@@ -18,32 +13,45 @@ class Search extends React.Component {
 
 
     handleChange(e){
+        if (e.target.value === '') {
+            this.setState({search: '<NULL>'});
+            this.setState({show: false});
+            return;
+        }
+
         this.setState({search: e.target.value});
-        this.props.fetchSearch(this.state.search);
-
-
-
-        // if (isEmpty(this.props.result)) {
-        //     //does stuff
-        // }
+        this.props.fetchSearch(e.target.value);
+        this.setState({show: true});
     }
 
 
 
     render(){
-        console.log(this.props.results);
+        
+        let dropdown = [];
+        
+        for (let id in this.props.results) {
+            let username = this.props.results[id][1]
+            dropdown.push(<li key={id}>{username}</li>)
+        }
+        
 
-        let dropdown = '';
-        if (this.state.show) dropdown = this.props.results;
-
-        return (
-            <div>
-                <input placeholder="search" type="text" onChange={this.handleChange}/>
-                <ul>
-                    {dropdown}
-                </ul>
-            </div>
-        )
+        if (!this.state.show) {
+            return (
+                <div className="search-container">
+                    <input placeholder="search" type="text" onChange={this.handleChange}/>
+                </div>
+            )
+        } else {
+            return (
+                <div className="search-container">
+                    <input placeholder="search" type="text" onChange={this.handleChange}/>
+                    <ul>
+                        {dropdown}
+                    </ul>
+                </div>
+            )
+        }
     }
 }
 

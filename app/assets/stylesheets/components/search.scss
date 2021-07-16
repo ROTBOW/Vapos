@@ -1,0 +1,11 @@
+.search-container {
+    margin-right: 8px;
+
+    ul {
+        position: absolute;
+        background-color: darkblue;
+        width: 177px;
+        display: flex;
+        flex-direction: column;
+    }
+}
