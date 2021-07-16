@@ -48,7 +48,7 @@ class NavBar extends React.Component {
                 </div>
 
             );
-            shifting = <li><Link to="library">LIBRARY</Link></li>
+            shifting = <li><Link to="/library">LIBRARY</Link></li>
             minSizeControl = "navbar-buttons-560min"
         }
 
