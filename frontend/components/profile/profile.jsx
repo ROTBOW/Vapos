@@ -13,12 +13,23 @@ class Profile extends React.Component {
 
     constructor(props){
         super(props);
+
+        let thisUser;
+        if (this.props.user === undefined) {
+            thisUser = this.props.currentUser
+        } else {
+            thisUser = this.props.givenUser;
+        }
+
+        this.state = {
+            currentUser: thisUser
+        }
     }
 
     componentDidMount(){
         // grabs info about owned games
-        this.props.fetchUser(this.props.currentUser.id)
-        this.props.fetchRelations(this.props.currentUser.id)
+        this.props.fetchUser(this.state.currentUser.id)
+        this.props.fetchRelations(this.state.currentUser.id)
     }
 
     render(){
@@ -38,7 +49,7 @@ class Profile extends React.Component {
                             <div>
                                 <BsPersonFill className="profile-icon"/>
                                 <div>
-                                    <h2>{this.props.currentUser.username}</h2>
+                                    <h2>{this.state.currentUser.username}</h2>
                                     <article> {userInfo.desc} </article>
                                 </div>
                             </div>
@@ -61,7 +72,7 @@ class Profile extends React.Component {
 
         } else {
             return (
-                <div>well isn't this something? 2</div>
+                <div>well isn't this something?</div>
             )
         }
     }
