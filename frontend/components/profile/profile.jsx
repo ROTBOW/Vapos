@@ -21,7 +21,7 @@ class Profile extends React.Component {
     }
 
     render(){
-        if (!isEmpty(this.props.userInfo) && !isEmpty(this.props.ownedGames) ) {
+        if (!isEmpty(this.props.userInfo)) {
             let userInfo = this.props.userInfo[this.props.match.params.id];
             let ownedGames = this.props.ownedGames;
 

@@ -11,6 +11,7 @@ class Cart extends React.Component {
 
         this.totalCost = this.totalCost.bind(this);
         this.handleRemove = this.handleRemove.bind(this);
+        this.handleBuy = this.handleBuy.bind(this);
     }
 
     componentDidMount(){
@@ -30,6 +31,21 @@ class Cart extends React.Component {
             cost += items[item].cost
         }
         return cost
+    }
+
+    handleBuy(e) {
+        e.preventDefault();
+        let cartItems = this.props.cartItems;
+        for (let id in cartItems) {
+            let game = cartItems[id];
+            this.props.createRelation({
+                relation: {
+                    user_id: this.props.currentUser.id,
+                    game_id: game.id,
+                    owned: true
+            }})
+        }
+        this.props.history.replace('/library');
     }
 
     handleRemove(itemId) {
@@ -72,7 +88,7 @@ class Cart extends React.Component {
                             <p>${this.totalCost()}</p>
                         </div>
                         <section>
-                            <button>Purchase for myself</button>
+                            <button onClick={this.handleBuy}>Purchase for myself</button>
                             <button>Purchase as a gift</button>
                         </section>
                     </div>

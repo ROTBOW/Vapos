@@ -15,7 +15,10 @@ class Library extends React.Component {
     render(){
         if (isEmpty(this.props.ownedGames)) {
             return (
-                <div>here we are has no games</div>
+                <div id="wishlist">
+                    <h1>YOUR LIBRARY IS EMPTY</h1>
+                    <Link to="/" className="back-link">Discover Games</Link>
+                </div>
                 )
         } else {
 

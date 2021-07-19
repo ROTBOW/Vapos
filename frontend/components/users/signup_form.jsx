@@ -37,7 +37,11 @@ class SignUpForm extends React.Component {
             password: this.state.password
         }
 
-        this.props.createUser(newUser);
+        this.props.createUser(newUser)
+            .then(() => {
+                this.props.sendLogin(newUser)
+            });
+
         if (this.props.currentUser) {
             this.props.history.replace('/login')
         }
