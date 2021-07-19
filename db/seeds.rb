@@ -113,13 +113,13 @@ demo_game_2 = UsersGame.create({
 })
 
 split_game_1 = UsersGame.create({
-    user_id: spilt.id,
+    user_id: split.id,
     game_id: x3_farnhams_legacy.id,
     owned: true
 })
 
 split_game_2 = UsersGame.create({
-    user_id: spilt.id,
+    user_id: split.id,
     game_id: black_desert.id,
     owned: true
 })
