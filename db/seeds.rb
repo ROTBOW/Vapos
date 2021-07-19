@@ -11,35 +11,35 @@ User.delete_all
 admin = User.create({username: 'admin', password: 'pinky', email: 'thisIsFakeBro@roads.com', desc: 'Has Admin name, not much else'})
 demo = User.create({username: 'Demo User', password: 'demoboi55', email: 'thisIsFakeDemoboi@roads.com', desc: "Wow this site is so cool! I can't wait to see all the games I can buy!"})
 
-maddog = user.create({
+maddog = User.create({
     username: 'MadDog',
     password: 'MadDog55',
     email: 'maddog@mail.com',
     desc: 'hey yo mate, ain\'t none of you wanna fight me 1v1'
 })
 
-angelica = user.create({
+angelica = User.create({
     username: 'Angelica',
     password: 'Angelica55',
     email: 'angelica@mail.com',
     desc: 'Can\'t wait to meet you all <3'
 })
 
-qai = user.create({
+qai = User.create({
     username: 'QAI',
     password: 'QAI55',
     email: 'qai@mail.com',
     desc: 'Your strategies are without merit.'
 })
 
-brackman = user.create({
+brackman = User.create({
     username: 'Brackman',
     password: 'brackman55',
     email: 'brackman@gmail.com',
     desc: 'welcome my child, you shall be the tip of our spear. oh yes. The tip of our spear.'
 })
 
-split = user.create({
+split = User.create({
     username: 'Split',
     password: 'split55',
     email: 'split@mail.com',
