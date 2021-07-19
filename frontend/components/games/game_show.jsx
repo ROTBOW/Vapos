@@ -14,6 +14,7 @@ class GamePage extends React.Component {
         this.removeWishlistButton = this.removeWishlistButton.bind(this)
         this.findMeInWishlist = this.findMeInWishlist.bind(this)
         this.cartIncludesMe = this.cartIncludesMe.bind(this)
+        this.libraryIncludesMe = this.libraryIncludesMe.bind(this)
     }
 
     componentDidMount() {
@@ -84,6 +85,15 @@ class GamePage extends React.Component {
         return false;
     }
 
+    libraryIncludesMe(gameId) {
+        debugger;
+        for (let id in this.props.library) {
+            let game = this.props.library[id]
+            if (game.id === gameId) return true;
+        }
+        return false;
+    }
+
 
     render(){
         
@@ -113,10 +123,22 @@ class GamePage extends React.Component {
             }
 
             if (this.cartIncludesMe(game)) {
+                wishlistButton = <button onClick={e => this.history.replace('/cart')}>In Your Cart</button>
                 buyButton = [
                     <h2 key='1'>Buy {game.title}</h2>,
                     <label key='2'>${game.cost}
                         <button onClick={e => this.props.history.replace('/cart')} >In Cart!</button>
+                    </label>
+                ]
+            }
+
+            if (this.libraryIncludesMe(game.id)) {
+                
+                wishlistButton = <button onClick={e => this.props.history.replace('/library')} >owned</button>
+                buyButton = [
+                    <h2 key='1'>Buy {game.title}</h2>,
+                    <label key='2'>${game.cost}
+                        <button onClick={e => this.props.history.replace('/library')} >In Library!</button>
                     </label>
                 ]
             }

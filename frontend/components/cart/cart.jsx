@@ -45,6 +45,7 @@ class Cart extends React.Component {
                     owned: true
             }})
         }
+        for (let id in cartItems) this.props.removeCart(id);
         this.props.history.replace('/library');
     }
 

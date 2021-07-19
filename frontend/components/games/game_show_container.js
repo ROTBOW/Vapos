@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => {
     return {
         game: state.entities.games[ownProps.match.params.gameId],
         wishlist: state.entities.wishlist,
+        library: state.entities.library,
         cart: state.entities.cart,
         currentUser: state.sessionUser
     }
