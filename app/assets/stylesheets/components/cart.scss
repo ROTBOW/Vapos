@@ -13,6 +13,8 @@
     section {
         & :last-child {
             cursor: not-allowed;
+            text-decoration: line-through;
+            opacity: 0.6;
         }
     }
 

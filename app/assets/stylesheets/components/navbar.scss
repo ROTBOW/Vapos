@@ -42,10 +42,15 @@
     ul li:hover, ul a:hover {
         color: $text-color-hover;
         cursor: pointer;
-
+        
         &.disabled {
             cursor: not-allowed;
         }
+    }
+    
+    .disabled { 
+        text-decoration: line-through;
+        opacity: 0.6;
     }
 
     > div a {
@@ -131,6 +136,7 @@
 
         &.disabled {
             cursor: not-allowed;
+            opacity: 0.6;
         }
     
     }
