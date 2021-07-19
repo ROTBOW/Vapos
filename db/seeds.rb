@@ -11,9 +11,51 @@ User.delete_all
 admin = User.create({username: 'admin', password: 'pinky', email: 'thisIsFakeBro@roads.com', desc: 'Has Admin name, not much else'})
 demo = User.create({username: 'Demo User', password: 'demoboi55', email: 'thisIsFakeDemoboi@roads.com', desc: "Wow this site is so cool! I can't wait to see all the games I can buy!"})
 
+maddog = user.create({
+    username: 'MadDog',
+    password: 'MadDog55',
+    email: 'maddog@mail.com',
+    desc: 'hey yo mate, ain\'t none of you wanna fight me 1v1'
+})
+
+angelica = user.create({
+    username: 'Angelica',
+    password: 'Angelica55',
+    email: 'angelica@mail.com',
+    desc: 'Can\'t wait to meet you all <3'
+})
+
+qai = user.create({
+    username: 'QAI',
+    password: 'QAI55',
+    email: 'qai@mail.com',
+    desc: 'Your strategies are without merit.'
+})
+
+brackman = user.create({
+    username: 'Brackman',
+    password: 'brackman55',
+    email: 'brackman@gmail.com',
+    desc: 'welcome my child, you shall be the tip of our spear. oh yes. The tip of our spear.'
+})
+
+split = user.create({
+    username: 'Split',
+    password: 'split55',
+    email: 'split@mail.com',
+    desc: 'What does Terran want with Split?'
+})
+
+# template = user.create({
+#     username: '',
+#     password: '',
+#     email: '',
+#     desc: ''
+# })
 
 
-# gonna need around 20-30 games in the final app, prob just gonna take them all from my list
+
+# gonna need around 20-30 games in the final app
 Game.delete_all
 
 from_the_depths = Game.create({
@@ -66,6 +108,42 @@ demo_game_1 = UsersGame.create!({
 })
 demo_game_2 = UsersGame.create({
     user_id: demo.id,
+    game_id: war_thunder.id,
+    owned: true
+})
+
+split_game_1 = UsersGame.create({
+    user_id: spilt.id,
+    game_id: x3_farnhams_legacy.id,
+    owned: true
+})
+
+split_game_2 = UsersGame.create({
+    user_id: spilt.id,
+    game_id: black_desert.id,
+    owned: true
+})
+
+brackman_game = UsersGame.create({
+    user_id: brackman.id,
+    game_id: supcom_fa.id,
+    owned: true
+})
+
+qai_game = UsersGame.create({
+    user_id: qai.id,
+    game_id: supcom_fa.id,
+    owned: true
+})
+
+angelica_game = UsersGame.create({
+    user_id: angelica.id,
+    game_id: black_desert.id,
+    owned: true
+})
+
+maddog_game = UsersGame.create({
+    user_id: maddog.id,
     game_id: war_thunder.id,
     owned: true
 })

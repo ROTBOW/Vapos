@@ -10,6 +10,7 @@ class GamePage extends React.Component {
         super(props)
 
         this.handleBuyButton = this.handleBuyButton.bind(this)
+        this.handleFreeGame = this.handleFreeGame.bind(this);
         this.handleWishlistButton = this.handleWishlistButton.bind(this)
         this.removeWishlistButton = this.removeWishlistButton.bind(this)
         this.findMeInWishlist = this.findMeInWishlist.bind(this)
@@ -40,6 +41,18 @@ class GamePage extends React.Component {
         } else {
             this.props.history.replace('/login');
         }
+    }
+
+    handleFreeGame(e) {
+        e.preventDefault();
+        this.props.addToWishlist({
+            relation: {
+                user_id: this.props.currentUser.id,
+                game_id: this.props.game.id,
+                owned: true
+            }
+        })
+        this.props.history.replace('/library')
     }
 
     handleWishlistButton(e){
@@ -113,7 +126,7 @@ class GamePage extends React.Component {
             if (game.cost === 0) {
                 buyButton = [<h2 key='1'>play {game.title}</h2>,
                     <label key='2'>Free
-                        <button onClick={this.handleBuyButton}>Add To Library</button>
+                        <button onClick={this.handleFreeGame}>Add To Library</button>
                     </label>]
             } else {
                 buyButton = [<h2 key='1'>Buy {game.title}</h2>,
