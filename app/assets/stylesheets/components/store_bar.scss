@@ -10,6 +10,7 @@
 
     ul {
         display: flex;
+        z-index: 10;
         
         .store-bar-items {
             margin-right: 15px;
