@@ -10,6 +10,12 @@
     flex-direction: column;
     align-items: center;
 
+    section {
+        & :last-child {
+            cursor: not-allowed;
+        }
+    }
+
     h1 {
         font-size: 26px;
         color: rgb(211, 211, 211);
@@ -17,7 +23,6 @@
     }
 
     ul {
-        // background: blue;
         width: 600px;
     }
 

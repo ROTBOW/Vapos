@@ -40,13 +40,13 @@ class Search extends React.Component {
         if (!this.state.show) {
             return (
                 <div id="search-container">
-                    <input placeholder="search" type="text" onChange={this.handleChange}/>
+                    <input placeholder="search user" type="text" onChange={this.handleChange}/>
                 </div>
             )
         } else {
             return (
                 <div id="search-container">
-                    <input placeholder="search" type="text" onChange={this.handleChange}/>
+                    <input placeholder="search user" type="text" onChange={this.handleChange}/>
                     <ul>
                         {dropdown}
                     </ul>
