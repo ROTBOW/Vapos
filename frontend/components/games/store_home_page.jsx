@@ -2,6 +2,8 @@ import React from 'react';
 import GameCarouselContainer from './game_carousel_container';
 import GameListContainer from './game_list_container';
 import StoreBar from './store_bar';
+import { isEmpty } from './../profile/profile';
+import { Link } from 'react-router-dom';
 
 
 
@@ -17,33 +19,44 @@ class StoreHomePage extends React.Component {
 
     render() {
         let str = 'War Thunder*From The Depths*Black Desert Online*X3 Farnham\'s Legacy*Supreme Commander Forged Alliance'
-        
-        return (
-            <main id="store-main">
 
-                <div className="store-left-wing">
+        if (!isEmpty(this.props.games)) {
 
-                </div>
+            let games = [];
+            for (let id in this.props.games) {
+                let game = this.props.games[id];
+                games.push(
+                        <li key={id}>
+                            <Link to={`/games/${game.id}`} >
+                                <img src={game.images[0]}></img>
+                            </Link>
+                        </li>
+                    )
+            }
 
-
-
-                <div className="store-right-wing">
-                    <StoreBar classToAdd="store-bar-store"/>
+            return (
+                <main id="store-main">
+    
+                  
+                        <StoreBar classToAdd="store-bar-store"/>
+    
+                        
+                        <GameCarouselContainer str={str}/>
+                        
+    
+                        <ul className="home-game-grid">
+                            {games}
+                        </ul>
                     
-                    {/* <h1>this is the right wing</h1> */}
-
-                    
-                    <GameCarouselContainer str={str}/>
-                    
-
-                    {/* <div>
-                        <GameListContainer/>
-                    </div> */}
-                </div>
-
-
-            </main>
-        )
+    
+    
+                </main>
+            )
+        } else {
+            return (
+                <div>Please hold...</div>
+            )
+        }
     }
 
 }

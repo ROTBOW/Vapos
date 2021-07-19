@@ -99,7 +99,6 @@ class GamePage extends React.Component {
     }
 
     libraryIncludesMe(gameId) {
-        debugger;
         for (let id in this.props.library) {
             let game = this.props.library[id]
             if (game.id === gameId) return true;

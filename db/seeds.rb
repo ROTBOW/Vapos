@@ -69,7 +69,7 @@ supcom_fa = Game.create({
     title: 'Supreme Commander Forged Alliance',
     description: 'Best RTS ever made',
     cost: 12.99,
-    images_url: 'https://i.ibb.co/FWH8zsc/0-supcomfa.jpg<SEPA>https://i.ibb.co/sJdWVW6/1-supcomfa.jpg<SEPA>https://i.ibb.co/WF66TNm/2-supcomfa.jpg'
+    images_url: 'https://i.ibb.co/FWH8zsc/0-supcomfa.jpg<SEPA>https://i.ibb.co/sJdWVW6/1-supcomfa.jpg<SEPA>https://i.ibb.co/WF66TNm/2-supcomfa.jpg<SEPA>https://i.ibb.co/pXYwRNG/3-supcomfa.jpg<SEPA>https://i.ibb.co/mCRFxk1/4-supcomfa.jpg'
 })
 black_desert = Game.create({
     title: 'Black Desert Online',
@@ -89,6 +89,21 @@ x3_farnhams_legacy = Game.create({
     description: 'The classic X3 game is brought back to life with this remaster of a masterpiece',
     cost: 0,
     images_url: 'https://i.ibb.co/D8hGqq1/0-x3fl.jpg<SEPA>https://i.ibb.co/1GW5fvJ/1-x3fl.jpg<SEPA>https://i.ibb.co/ckNMvSN/2-x3fl.jpg<SEPA>https://i.ibb.co/N73VNVP/3-x3fl.jpg<SEPA>https://i.ibb.co/FK8zpCW/4-x3fl.jpg'
+})
+
+dead_by_daylight = Game.create({
+    title: 'Dead By Daylight',
+    description: 'Dead by Daylight is a multiplayer (4vs1) horror game where one player takes on the role of the savage Killer, and the other four players play as Survivors, trying to escape the Killer and avoid being caught and killed.',
+    cost: 19.99,
+    images_url: 'https://i.ibb.co/Wtr2Jf8/0-dbd.jpg<SEPA>https://i.ibb.co/8BYTMbn/1-dbd.jpg<SEPA>https://i.ibb.co/VCkYS8Q/2-dbd.jpg<SEPA>https://i.ibb.co/x7Xg3Sz/3-dbd.jpg<SEPA>https://i.ibb.co/37vQHFR/4-dbd.jpg'
+})
+
+
+template = Game.create({
+    title: '',
+    description: '',
+    cost: 0,
+    images_url: ''
 })
 
 UsersGame.delete_all
