@@ -46,13 +46,27 @@ split = User.create({
     desc: 'What does Terran want with Split?'
 })
 
+shadowhybread = User.create({
+    username: 'Shadowhybread',
+    password: 'shadowhybread55',
+    email: 'shadowhybread@mail.com',
+    desc: 'What are you even doing here, lol xd'
+})
+
+rotbow = User.create({
+    username: 'ROTBOW',
+    password: 'rotbow55',
+    email: 'rotbow@mail.com',
+    desc: 'Wait a second, I built this site!'
+})
+
+
 # template = User.create({
 #     username: '',
 #     password: '',
 #     email: '',
 #     desc: ''
 # })
-
 
 
 # gonna need around 20-30 games in the final app
@@ -159,6 +173,16 @@ UsersGame.delete_all
 Game.all.each do |game|
     UsersGame.create!({
         user_id: admin.id,
+        game_id: game.id,
+        owned: true
+    })
+    UsersGame.create!({
+        user_id: shadowhybread.id,
+        game_id: game.id,
+        owned: true
+    })
+    UsersGame.create!({
+        user_id: rotbow.id,
         game_id: game.id,
         owned: true
     })
