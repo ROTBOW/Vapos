@@ -1,0 +1,49 @@
+
+// .spin {
+//     -webkit-animation: spin 0.2s infinite;
+//     -moz-animation-duration: 0.2s;
+//     -moz-animation-name: spin;
+//     -moz-animation-iteration-count: infinite;
+//     -webkit-transform: rotate(-3deg);
+//     -moz-transform: rotate(-3deg);
+// }
+
+@-moz-keyframes spin {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        }
+    50% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+
+.loading {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 7.5rem;
+
+    color: rgb(210, 210, 210);
+
+    font-size: 28px;
+
+    svg {
+        margin-left: 15px;
+        -webkit-animation: spin 3s infinite;
+        -moz-animation-duration: 3s;
+        -moz-animation-name: spin;
+        -moz-animation-iteration-count: infinite;
+        -webkit-transform: rotate(-3deg);
+        -moz-transform: rotate(-3deg);
+    }
+}

@@ -1,9 +1,9 @@
 import React from 'react';
 import GameCarouselContainer from './game_carousel_container';
-import GameListContainer from './game_list_container';
 import StoreBar from './store_bar';
 import { isEmpty } from './../profile/profile';
 import { Link } from 'react-router-dom';
+import { GiConsoleController } from "react-icons/gi";
 
 
 
@@ -13,7 +13,7 @@ class StoreHomePage extends React.Component {
         super(props)
     }
     
-    componentDidMount() { //gonna leave this for now but might not need it
+    componentDidMount() {
         this.props.fetchAllGames()
     }
 
@@ -54,7 +54,7 @@ class StoreHomePage extends React.Component {
             )
         } else {
             return (
-                <div>Please hold...</div>
+                <div className="loading">Loading...<GiConsoleController/></div>
             )
         }
     }
