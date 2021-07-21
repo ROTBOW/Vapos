@@ -85,7 +85,7 @@ class LoginForm extends React.Component {
 
 
                 <div id="login-right-side">
-                    <p>Join Vapos and find <br/> of the [?] games to look at and not download</p>
+                    <p>Join Vapos and find <br/> all of the games to look at and not download</p>
                     <Link to='/user/new' key='1'><button>Join Vapos</button></Link>
                 </div>
 

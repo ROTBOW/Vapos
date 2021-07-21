@@ -30,6 +30,10 @@
 
     }
 
+    .glow {
+        color: rgb(190, 190, 190);
+    }
+
     ul li, ul a {
         list-style: none;
         text-decoration: none;
@@ -49,7 +53,7 @@
     }
     
     .disabled { 
-        text-decoration: line-through;
+        // text-decoration: line-through;
         opacity: 0.6;
     }
 
@@ -136,7 +140,7 @@
 
         &.disabled {
             cursor: not-allowed;
-            opacity: 0.6;
+            // opacity: 0.6;
         }
     
     }

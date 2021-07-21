@@ -86,12 +86,13 @@ class NavBar extends React.Component {
                         <li
                             onMouseEnter={e => this.setState({storeDropdown: true})}
                             onMouseLeave={e => this.setState({storeDropdown: false})}
-                        ><Link to='/'>STORE</Link>{storeDrop}</li>
+                        ><Link className="glow" to='/'>STORE</Link>{storeDrop}</li>
 
                         {shifting}
                         <li
                             onMouseEnter={e => this.setState({aboutDropdown: true})}
                             onMouseLeave={e => this.setState({aboutDropdown: false})}
+                            className="glow"
                         >ABOUT{aboutDrop}</li>
                         <li className="disabled">SUPPORT</li>
                         {
