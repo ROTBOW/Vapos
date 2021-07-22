@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsPersonFill, BsTrophy } from "react-icons/bs";
+import Loading from "../loading/loading";
 
 export const isEmpty = (pojo, returnCount=false) => {
     let count = 0;
@@ -56,9 +57,7 @@ class Profile extends React.Component {
             )
 
         } else {
-            return (
-                <div>well isn't this something?</div>
-            )
+            return(<Loading/>)
         }
     }
 

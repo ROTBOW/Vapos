@@ -3,7 +3,7 @@ import GameCarouselContainer from './game_carousel_container';
 import StoreBar from './store_bar';
 import { isEmpty } from './../profile/profile';
 import { Link } from 'react-router-dom';
-import { GiConsoleController } from "react-icons/gi";
+import Loading from '../loading/loading';
 
 
 
@@ -53,9 +53,7 @@ class StoreHomePage extends React.Component {
                 </main>
             )
         } else {
-            return (
-                <div className="loading">Loading...<GiConsoleController/></div>
-            )
+            return(<Loading/>)
         }
     }
 
