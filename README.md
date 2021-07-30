@@ -32,4 +32,4 @@ for ( let game in gamesMap ) {
     boxes.push(<div key={game} className={`game-carousel-box ${posiClass}`} onClick={e => this.setState({currentGame: Number(game)})}/>)
 };
 ```
-the above code creates a box for each game in the carousel, if that game is the current game in the carousel, meaning the one on display, it gives that box the `game-carousel-box-active` html/css class which styles it properly.
+the above code creates a box for each game in the carousel, if that game is the current game in the carousel, meaning the one on display, it gives that box the `game-carousel-box-active` html/css class which styles it properly.  
