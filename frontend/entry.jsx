@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.store = store;
     window.fetchRelations = fetchRelations;
-    initializeReactGA();
+    // initializeReactGA();
     
     ReactDOM.render(<Root store={store}/>, root);
 })
