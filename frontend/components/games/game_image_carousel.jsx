@@ -59,8 +59,6 @@ class GameImageCarousel extends React.Component {
             />)
         })
 
-        // imagesMapped = this.addFive(imagesMapped)
-
 
         return (
             <div id="game-show-left-wing" >
